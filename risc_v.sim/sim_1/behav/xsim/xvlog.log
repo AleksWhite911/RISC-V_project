@@ -1,0 +1,22 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/VivPrj/risc_v/src/angle_to_amp.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module angle_to_amp
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/VivPrj/risc_v/src/data_memory.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_memory
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/RISC_V/instruction_rom.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module instruction_rom
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/VivPrj/risc_v/src/lut.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lut
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/VivPrj/risc_v/src/register_with_rst.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module register_with_rst
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/VivPrj/risc_v/src/sr_alu.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sr_alu
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/VivPrj/risc_v/src/sr_control.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sr_control
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/VivPrj/risc_v/src/sr_cpu.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sr_cpu
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/VivPrj/risc_v/src/sr_decode.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sr_decode
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/VivPrj/risc_v/src/sr_register_file.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sr_register_file
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/VivPrj/risc_v/risc_v.srcs/sim_1/imports/RISC_V/tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb
