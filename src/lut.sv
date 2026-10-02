@@ -22,7 +22,7 @@ module lut(
 		$readmemb("lut.txt", lut);
 	end
 	
-	always_ff @ (posedge clk)
+	always_comb
 	begin
 		q_a = lut[addr_a];
 		q_b = lut[addr_b];

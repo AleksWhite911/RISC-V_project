@@ -11,7 +11,22 @@ module sr_cpu
     input   [ 4:0]  regAddr,  // debug access reg address
     output  [31:0]  regData,   // debug access reg data
     output [15:0] i_component, q_component, i_component_2, q_component_2,
-    output [31:0] gpio_port_a, gpio_port_b
+    output [31:0] gpio_port_a, gpio_port_b,
+
+    //DEBUG PORTS CONTROL
+    output logic ADD_INSTR,
+    output logic OR_INSTR,
+    output logic SRL_INSTR,
+    output logic SLTU_INSTR,
+    output logic SUB_INSTR,
+    output logic MUL_INSTR,
+    output logic LW_INSTR,
+    output logic SW_INSTR,
+    output logic ADDI_INSTR,
+    output logic LUI_INSTR,
+    output logic BEQ_INSTR,
+    output logic BNE_INSTR,
+    output logic JAL_INSTR    
 );
     // control wires
 
@@ -21,7 +36,7 @@ module sr_cpu
     wire        aluSrc;
     wire        wdSrc;
     wire  [2:0] aluControl;
-    wire jal;
+    wire        jal;
 
     // instruction decode wires
 
@@ -40,9 +55,8 @@ module sr_cpu
     // program counter
 
     wire [31:0] pc;
-    //wire [31:0] pcBranch = pc + immB;
     logic [31:0] pcBranch;
-    wire [31:0] pcPlus4  = pc + 32'd4;
+    wire [31:0] pcPlus4  = pc + (32'd4);
     wire [31:0] pcNext   = pcSrc ? pcBranch : pcPlus4;
 
      always_comb begin
@@ -184,7 +198,20 @@ module sr_cpu
         .aluControl ( aluControl  ),
         .MemWrite   ( MemWrite    ),
         .ResultSrc  ( ResultSrc   ),
-        .immSrc     ( immSrc      )
+        .immSrc     ( immSrc      ),
+        .ADD_INSTR  ( ADD_INSTR   ),
+        .OR_INSTR   ( OR_INSTR    ),
+        .SRL_INSTR  ( SRL_INSTR   ),
+        .SLTU_INSTR ( SLTU_INSTR  ),
+        .SUB_INSTR  ( SUB_INSTR   ),
+        .MUL_INSTR  ( MUL_INSTR   ),
+        .LW_INSTR   ( LW_INSTR    ),
+        .SW_INSTR   ( SW_INSTR    ),
+        .ADDI_INSTR ( ADDI_INSTR  ),
+        .LUI_INSTR  ( LUI_INSTR   ),
+        .BEQ_INSTR  ( BEQ_INSTR   ),
+        .BNE_INSTR  ( BNE_INSTR   ),
+        .JAL_INSTR  ( JAL_INSTR   )
     );
 
     // debug register access

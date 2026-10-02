@@ -14,9 +14,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7vx485t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7vx485t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 7892 
+INFO: Helper process launched with PID 8704 
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 593.391 ; gain = 197.293
+Starting Synthesize : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 593.367 ; gain = 196.539
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'sr_cpu' [C:/VivPrj/risc_v/src/sr_cpu.sv:3]
 INFO: [Synth 8-6157] synthesizing module 'register_with_rst' [C:/VivPrj/risc_v/src/register_with_rst.sv:13]
@@ -55,24 +55,145 @@ INFO: [Synth 8-6155] done synthesizing module 'sr_control' (8#1) [C:/VivPrj/risc
 WARNING: [Synth 8-689] width (1) of port connection 'wdSrc' does not match port width (2) of module 'sr_control' [C:/VivPrj/risc_v/src/sr_cpu.sv:182]
 INFO: [Synth 8-6155] done synthesizing module 'sr_cpu' (9#1) [C:/VivPrj/risc_v/src/sr_cpu.sv:3]
 WARNING: [Synth 8-3331] design angle_to_amp has unconnected port enable
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[31]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[30]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[29]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[28]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[27]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[26]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[25]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[24]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[23]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[22]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[21]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[20]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[19]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[18]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[17]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[16]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[15]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[14]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[13]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[12]
 WARNING: [Synth 8-3331] design data_memory has unconnected port a[1]
 WARNING: [Synth 8-3331] design data_memory has unconnected port a[0]
 WARNING: [Synth 8-3331] design sr_alu has unconnected port clk
 WARNING: [Synth 8-3331] design sr_alu has unconnected port rst
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 809.977 ; gain = 413.879
+Finished Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 779.699 ; gain = 382.871
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 809.977 ; gain = 413.879
+Finished Constraint Validation : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 779.699 ; gain = 382.871
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7vx485tffg1157-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 779.699 ; gain = 382.871
+---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7vx485tffg1157-1
----------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 809.977 ; gain = 413.879
----------------------------------------------------------------------------------
+INFO: [Synth 8-4471] merging register 'ram_reg[257][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[258][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[259][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[260][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[261][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[262][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[263][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[264][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[265][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[266][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[267][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[268][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[269][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[270][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[271][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[272][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[273][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[274][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[275][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[276][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[277][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[278][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[279][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[280][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[281][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[282][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[283][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[284][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[285][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[286][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[287][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[288][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[289][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[290][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[291][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[292][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[293][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[294][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[295][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[296][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[297][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[298][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[299][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[300][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[301][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[302][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[303][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[304][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[305][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[306][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[307][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[308][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[309][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[310][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[311][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[312][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[313][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[314][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[315][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[316][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[317][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[318][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[319][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[320][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[321][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[322][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[323][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[324][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[325][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[326][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[327][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[328][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[329][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[330][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[331][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[332][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[333][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[334][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[335][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[336][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[337][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[338][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[339][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[340][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[341][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[342][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[343][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[344][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[345][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[346][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[347][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[348][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[349][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[350][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[351][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[352][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[353][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[354][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[355][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Synth 8-4471] merging register 'ram_reg[356][31:0]' into 'ram_reg[256][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:22]
+INFO: [Common 17-14] Message 'Synth 8-4471' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-802] inferred FSM for state register 'State_sin_reg' in module 'angle_to_amp'
 INFO: [Synth 8-802] inferred FSM for state register 'State_cos_reg' in module 'angle_to_amp'
 INFO: [Synth 8-5544] ROM "State_sin" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
@@ -97,21 +218,14 @@ INFO: [Synth 8-3354] encoded FSM with state register 'State_sin_reg' using encod
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'State_cos_reg' using encoding 'sequential' in module 'angle_to_amp'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:12 . Memory (MB): peak = 1197.340 ; gain = 801.242
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 1108.949 ; gain = 712.121
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+------+--------------------------+------------+----------+
-|      |RTL Partition             |Replication |Instances |
-+------+--------------------------+------------+----------+
-|1     |muxpart__1025_data_memory |           1|     32736|
-|2     |data_memory__GB1          |           1|      2432|
-|3     |data_memory__GB2          |           1|      8832|
-|4     |data_memory__GB3          |           1|     11008|
-|5     |data_memory__GB4          |           1|     16322|
-|6     |data_memory__GB5          |           1|     30014|
-|7     |sr_cpu__GC0               |           1|      2842|
-+------+--------------------------+------------+----------+
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
 No constraint files found.
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -122,9 +236,9 @@ Detailed RTL Component Info :
 	   3 Input     32 Bit       Adders := 1     
 	   2 Input     16 Bit       Adders := 8     
 +---Registers : 
-	               32 Bit    Registers := 1025  
+	               32 Bit    Registers := 258   
 	               16 Bit    Registers := 4     
-	               15 Bit    Registers := 6     
+	               15 Bit    Registers := 4     
 	                1 Bit    Registers := 4     
 +---Multipliers : 
 	                32x32  Multipliers := 1     
@@ -138,8 +252,8 @@ Detailed RTL Component Info :
 	  14 Input      3 Bit        Muxes := 1     
 	   4 Input      2 Bit        Muxes := 4     
 	  14 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 1033  
-	   4 Input      1 Bit        Muxes := 18    
+	   2 Input      1 Bit        Muxes := 265   
+	   4 Input      1 Bit        Muxes := 16    
 	  14 Input      1 Bit        Muxes := 7     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -155,12 +269,6 @@ Detailed RTL Component Info :
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 6     
 	   4 Input     32 Bit        Muxes := 1     
-Module data_memory 
-Detailed RTL Component Info : 
-+---Registers : 
-	               32 Bit    Registers := 1024  
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1024  
 Module register_with_rst 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -176,26 +284,12 @@ Detailed RTL Component Info :
 	   3 Input     32 Bit       Adders := 1     
 +---Multipliers : 
 	                32x32  Multipliers := 1     
-Module lut__1 
+Module data_memory 
 Detailed RTL Component Info : 
 +---Registers : 
-	               15 Bit    Registers := 2     
-+---ROMs : 
-	                              ROMs := 2     
-Module angle_to_amp__1 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     16 Bit       Adders := 4     
-+---Registers : 
-	               16 Bit    Registers := 2     
-	               15 Bit    Registers := 1     
-	                1 Bit    Registers := 2     
+	               32 Bit    Registers := 257   
 +---Muxes : 
-	   4 Input     16 Bit        Muxes := 2     
-	   2 Input     16 Bit        Muxes := 2     
-	   4 Input      2 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 4     
-	   4 Input      1 Bit        Muxes := 9     
+	   2 Input      1 Bit        Muxes := 256   
 Module lut 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -208,14 +302,13 @@ Detailed RTL Component Info :
 	   2 Input     16 Bit       Adders := 4     
 +---Registers : 
 	               16 Bit    Registers := 2     
-	               15 Bit    Registers := 1     
 	                1 Bit    Registers := 2     
 +---Muxes : 
 	   4 Input     16 Bit        Muxes := 2     
 	   2 Input     16 Bit        Muxes := 2     
 	   4 Input      2 Bit        Muxes := 2     
 	   2 Input      1 Bit        Muxes := 4     
-	   4 Input      1 Bit        Muxes := 9     
+	   4 Input      1 Bit        Muxes := 8     
 Module sr_control 
 Detailed RTL Component Info : 
 +---Muxes : 
@@ -255,14 +348,62 @@ DSP Report: operator alu/result0 is absorbed into DSP alu/result0.
 DSP Report: operator alu/result0 is absorbed into DSP alu/result0.
 WARNING: [Synth 8-3917] design sr_cpu has port imAddr[31] driven by constant 0
 WARNING: [Synth 8-3917] design sr_cpu has port imAddr[30] driven by constant 0
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin <const0> with 1st driver pin 'i_0/dds/out_data_sin_inferred/out_data_sin_reg[15]' [C:/VivPrj/risc_v/src/angle_to_amp.sv:63]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin <const0> with 2nd driver pin 'GND' [C:/VivPrj/risc_v/src/angle_to_amp.sv:63]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net <const0> is connected to at least one constant driver which has been preserved, other driver is ignored [C:/VivPrj/risc_v/src/angle_to_amp.sv:63]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin <const0> with 1st driver pin 'i_0/dds_2/out_data_sin_inferred/out_data_sin_reg[15]' [C:/VivPrj/risc_v/src/angle_to_amp.sv:63]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin <const0> with 2nd driver pin 'GND' [C:/VivPrj/risc_v/src/angle_to_amp.sv:63]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net <const0> is connected to at least one constant driver which has been preserved, other driver is ignored [C:/VivPrj/risc_v/src/angle_to_amp.sv:63]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[31]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[30]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[29]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[28]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[27]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[26]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[25]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[24]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[23]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[22]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[21]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[20]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[19]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[18]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[17]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[16]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[15]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[14]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[13]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[12]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[1]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[0]
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (data_memory/\ram_reg[256][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (data_memory/\ram_reg[256][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (data_memory/\ram_reg[256][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (data_memory/\ram_reg[256][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (data_memory/\ram_reg[256][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (data_memory/\ram_reg[256][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (data_memory/\ram_reg[256][10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (data_memory/\ram_reg[256][11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (data_memory/\ram_reg[256][8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (data_memory/\ram_reg[256][9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (data_memory/\ram_reg[256][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (data_memory/\ram_reg[256][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (data_memory/\ram_reg[256][16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (data_memory/\ram_reg[256][17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (data_memory/\ram_reg[256][14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (data_memory/\ram_reg[256][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (data_memory/\ram_reg[256][12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (data_memory/\ram_reg[256][13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (data_memory/\ram_reg[256][22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (data_memory/\ram_reg[256][23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (data_memory/\ram_reg[256][20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (data_memory/\ram_reg[256][21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (data_memory/\ram_reg[256][18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (data_memory/\ram_reg[256][19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (data_memory/\ram_reg[256][28] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (data_memory/\ram_reg[256][29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (data_memory/\ram_reg[256][26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (data_memory/\ram_reg[256][27] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (data_memory/\ram_reg[256][24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (data_memory/\ram_reg[256][25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (data_memory/\ram_reg[256][30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (data_memory/\ram_reg[256][31] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:41 ; elapsed = 00:00:40 . Memory (MB): peak = 1429.582 ; gain = 1033.484
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:25 . Memory (MB): peak = 1378.297 ; gain = 981.469
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -302,85 +443,78 @@ Note: The table above is a preliminary report that shows the DSPs inferred at th
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6837] The timing for the instance i_0/i_6/dds/acc_phase_sin_reg_rep_0_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_6/dds/acc_phase_sin_reg_rep_0_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_6/dds/acc_phase_sin_reg_rep_0_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_6/dds/acc_phase_sin_reg_rep_0_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_6/dds/acc_phase_sin_reg_rep_0_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_6/dds/acc_phase_sin_reg_rep_0_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_6/dds/acc_phase_sin_reg_rep_0_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_6/dds/acc_phase_sin_reg_rep_0_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_6/dds/acc_phase_sin_reg_rep_0_8 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_6/dds/acc_phase_sin_reg_rep_0_9 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_6/dds/acc_phase_sin_reg_rep_0_10 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_6/dds/acc_phase_sin_reg_rep_0_11 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_6/dds/acc_phase_sin_reg_rep_0_12 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_6/dds/acc_phase_sin_reg_rep_0_13 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_6/dds/acc_phase_sin_reg_rep_0_14 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_11/dds/lut/q_b_reg_0_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_11/dds/lut/q_b_reg_0_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_11/dds/lut/q_b_reg_0_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_11/dds/lut/q_b_reg_0_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_11/dds/lut/q_b_reg_0_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_11/dds/lut/q_b_reg_0_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_11/dds/lut/q_b_reg_0_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_11/dds/lut/q_b_reg_0_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_11/dds/lut/q_b_reg_0_8 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_11/dds/lut/q_b_reg_0_9 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_11/dds/lut/q_b_reg_0_10 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_11/dds/lut/q_b_reg_0_11 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_11/dds/lut/q_b_reg_0_12 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_11/dds/lut/q_b_reg_0_13 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_11/dds/lut/q_b_reg_0_14 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_14/dds_2/acc_phase_sin_reg_rep_0_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_14/dds_2/acc_phase_sin_reg_rep_0_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_14/dds_2/acc_phase_sin_reg_rep_0_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_14/dds_2/acc_phase_sin_reg_rep_0_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_14/dds_2/acc_phase_sin_reg_rep_0_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_14/dds_2/acc_phase_sin_reg_rep_0_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_14/dds_2/acc_phase_sin_reg_rep_0_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_14/dds_2/acc_phase_sin_reg_rep_0_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_14/dds_2/acc_phase_sin_reg_rep_0_8 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_14/dds_2/acc_phase_sin_reg_rep_0_9 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_14/dds_2/acc_phase_sin_reg_rep_0_10 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_14/dds_2/acc_phase_sin_reg_rep_0_11 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_14/dds_2/acc_phase_sin_reg_rep_0_12 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_14/dds_2/acc_phase_sin_reg_rep_0_13 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_14/dds_2/acc_phase_sin_reg_rep_0_14 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_19/dds_2/lut/q_b_reg_0_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_19/dds_2/lut/q_b_reg_0_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_19/dds_2/lut/q_b_reg_0_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_19/dds_2/lut/q_b_reg_0_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_19/dds_2/lut/q_b_reg_0_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_19/dds_2/lut/q_b_reg_0_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_19/dds_2/lut/q_b_reg_0_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_19/dds_2/lut/q_b_reg_0_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_19/dds_2/lut/q_b_reg_0_8 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_19/dds_2/lut/q_b_reg_0_9 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_19/dds_2/lut/q_b_reg_0_10 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_19/dds_2/lut/q_b_reg_0_11 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_19/dds_2/lut/q_b_reg_0_12 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_19/dds_2/lut/q_b_reg_0_13 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance i_0/i_19/dds_2/lut/q_b_reg_0_14 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_4/dds/acc_phase_sin_reg_rep_0_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_4/dds/acc_phase_sin_reg_rep_0_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_4/dds/acc_phase_sin_reg_rep_0_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_4/dds/acc_phase_sin_reg_rep_0_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_4/dds/acc_phase_sin_reg_rep_0_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_4/dds/acc_phase_sin_reg_rep_0_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_4/dds/acc_phase_sin_reg_rep_0_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_4/dds/acc_phase_sin_reg_rep_0_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_4/dds/acc_phase_sin_reg_rep_0_8 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_4/dds/acc_phase_sin_reg_rep_0_9 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_4/dds/acc_phase_sin_reg_rep_0_10 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_4/dds/acc_phase_sin_reg_rep_0_11 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_4/dds/acc_phase_sin_reg_rep_0_12 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_4/dds/acc_phase_sin_reg_rep_0_13 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_4/dds/acc_phase_sin_reg_rep_0_14 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_9/dds/lut/q_b_reg_0_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_9/dds/lut/q_b_reg_0_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_9/dds/lut/q_b_reg_0_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_9/dds/lut/q_b_reg_0_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_9/dds/lut/q_b_reg_0_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_9/dds/lut/q_b_reg_0_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_9/dds/lut/q_b_reg_0_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_9/dds/lut/q_b_reg_0_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_9/dds/lut/q_b_reg_0_8 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_9/dds/lut/q_b_reg_0_9 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_9/dds/lut/q_b_reg_0_10 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_9/dds/lut/q_b_reg_0_11 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_9/dds/lut/q_b_reg_0_12 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_9/dds/lut/q_b_reg_0_13 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_9/dds/lut/q_b_reg_0_14 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_12/dds_2/acc_phase_sin_reg_rep_0_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_12/dds_2/acc_phase_sin_reg_rep_0_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_12/dds_2/acc_phase_sin_reg_rep_0_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_12/dds_2/acc_phase_sin_reg_rep_0_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_12/dds_2/acc_phase_sin_reg_rep_0_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_12/dds_2/acc_phase_sin_reg_rep_0_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_12/dds_2/acc_phase_sin_reg_rep_0_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_12/dds_2/acc_phase_sin_reg_rep_0_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_12/dds_2/acc_phase_sin_reg_rep_0_8 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_12/dds_2/acc_phase_sin_reg_rep_0_9 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_12/dds_2/acc_phase_sin_reg_rep_0_10 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_12/dds_2/acc_phase_sin_reg_rep_0_11 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_12/dds_2/acc_phase_sin_reg_rep_0_12 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_12/dds_2/acc_phase_sin_reg_rep_0_13 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_12/dds_2/acc_phase_sin_reg_rep_0_14 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_17/dds_2/lut/q_b_reg_0_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_17/dds_2/lut/q_b_reg_0_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_17/dds_2/lut/q_b_reg_0_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_17/dds_2/lut/q_b_reg_0_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_17/dds_2/lut/q_b_reg_0_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_17/dds_2/lut/q_b_reg_0_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_17/dds_2/lut/q_b_reg_0_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_17/dds_2/lut/q_b_reg_0_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_17/dds_2/lut/q_b_reg_0_8 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_17/dds_2/lut/q_b_reg_0_9 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_17/dds_2/lut/q_b_reg_0_10 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_17/dds_2/lut/q_b_reg_0_11 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_17/dds_2/lut/q_b_reg_0_12 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_17/dds_2/lut/q_b_reg_0_13 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_17/dds_2/lut/q_b_reg_0_14 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 
 Report RTL Partitions: 
-+------+--------------------------+------------+----------+
-|      |RTL Partition             |Replication |Instances |
-+------+--------------------------+------------+----------+
-|1     |muxpart__1025_data_memory |           1|     32736|
-|2     |data_memory__GB1          |           1|      2432|
-|3     |data_memory__GB2          |           1|      8832|
-|4     |data_memory__GB3          |           1|     11008|
-|5     |data_memory__GB4          |           1|     10825|
-|6     |data_memory__GB5          |           1|      1397|
-|7     |sr_cpu__GC0               |           1|      2456|
-+------+--------------------------+------------+----------+
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
 No constraint files found.
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:42 ; elapsed = 00:00:41 . Memory (MB): peak = 1429.668 ; gain = 1033.570
+Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:25 . Memory (MB): peak = 1378.297 ; gain = 981.469
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -398,22 +532,13 @@ Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+------+--------------------------+------------+----------+
-|      |RTL Partition             |Replication |Instances |
-+------+--------------------------+------------+----------+
-|1     |muxpart__1025_data_memory |           1|     32736|
-|2     |data_memory__GB1          |           1|      2432|
-|3     |data_memory__GB2          |           1|      8832|
-|4     |data_memory__GB3          |           1|     11008|
-|5     |data_memory__GB4          |           1|     10825|
-|6     |data_memory__GB5          |           1|      1397|
-|7     |sr_cpu__GC0               |           1|      2456|
-+------+--------------------------+------------+----------+
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5966] Removing register instance (\dds/out_data_sin_reg[0] ) from module (sr_cpu__GC0) as it has self-loop and (\dds/lut/q_a_reg[0] ) is actual driver [C:/VivPrj/risc_v/src/angle_to_amp.sv:94]
-INFO: [Synth 8-5966] Removing register instance (\dds_2/out_data_sin_reg[0] ) from module (sr_cpu__GC0) as it has self-loop and (\dds_2/lut/q_a_reg[0] ) is actual driver [C:/VivPrj/risc_v/src/angle_to_amp.sv:94]
 INFO: [Synth 8-6837] The timing for the instance dds/lut/q_b_reg_0_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-6837] The timing for the instance dds/lut/q_b_reg_0_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-6837] The timing for the instance dds/lut/q_b_reg_0_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
@@ -445,7 +570,7 @@ INFO: [Synth 8-6837] The timing for the instance dds/lut/q_b_reg_0_13 (implement
 INFO: [Synth 8-6837] The timing for the instance dds/lut/q_b_reg_0_14 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-6837] The timing for the instance dds/lut/q_b_reg_0_14 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:48 ; elapsed = 00:00:48 . Memory (MB): peak = 1429.668 ; gain = 1033.570
+Finished Technology Mapping : Time (s): cpu = 00:00:37 ; elapsed = 00:00:35 . Memory (MB): peak = 1378.297 ; gain = 981.469
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -469,76 +594,20 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:54 ; elapsed = 00:00:53 . Memory (MB): peak = 1429.668 ; gain = 1033.570
+Finished IO Insertion : Time (s): cpu = 00:00:41 ; elapsed = 00:00:39 . Memory (MB): peak = 1378.297 ; gain = 981.469
 ---------------------------------------------------------------------------------
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_OBUF[14] with 1st driver pin 'i_17086/O' [C:/VivPrj/risc_v/src/angle_to_amp.sv:63]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_OBUF[14] with 2nd driver pin 'dds/out_data_sin_reg[14]/Q' [C:/VivPrj/risc_v/src/angle_to_amp.sv:94]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_OBUF[13] with 1st driver pin 'i_17087/O' [C:/VivPrj/risc_v/src/angle_to_amp.sv:63]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_OBUF[13] with 2nd driver pin 'dds/out_data_sin_reg[13]/Q' [C:/VivPrj/risc_v/src/angle_to_amp.sv:94]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_OBUF[12] with 1st driver pin 'i_17088/O' [C:/VivPrj/risc_v/src/angle_to_amp.sv:63]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_OBUF[12] with 2nd driver pin 'dds/out_data_sin_reg[12]/Q' [C:/VivPrj/risc_v/src/angle_to_amp.sv:94]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_OBUF[11] with 1st driver pin 'i_17089/O' [C:/VivPrj/risc_v/src/angle_to_amp.sv:63]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_OBUF[11] with 2nd driver pin 'dds/out_data_sin_reg[11]/Q' [C:/VivPrj/risc_v/src/angle_to_amp.sv:94]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_OBUF[10] with 1st driver pin 'i_17090/O' [C:/VivPrj/risc_v/src/angle_to_amp.sv:63]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_OBUF[10] with 2nd driver pin 'dds/out_data_sin_reg[10]/Q' [C:/VivPrj/risc_v/src/angle_to_amp.sv:94]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_OBUF[9] with 1st driver pin 'i_17091/O' [C:/VivPrj/risc_v/src/angle_to_amp.sv:63]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_OBUF[9] with 2nd driver pin 'dds/out_data_sin_reg[9]/Q' [C:/VivPrj/risc_v/src/angle_to_amp.sv:94]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_OBUF[8] with 1st driver pin 'i_17092/O' [C:/VivPrj/risc_v/src/angle_to_amp.sv:63]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_OBUF[8] with 2nd driver pin 'dds/out_data_sin_reg[8]/Q' [C:/VivPrj/risc_v/src/angle_to_amp.sv:94]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_OBUF[7] with 1st driver pin 'i_17093/O' [C:/VivPrj/risc_v/src/angle_to_amp.sv:63]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_OBUF[7] with 2nd driver pin 'dds/out_data_sin_reg[7]/Q' [C:/VivPrj/risc_v/src/angle_to_amp.sv:94]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_OBUF[6] with 1st driver pin 'i_17094/O' [C:/VivPrj/risc_v/src/angle_to_amp.sv:63]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_OBUF[6] with 2nd driver pin 'dds/out_data_sin_reg[6]/Q' [C:/VivPrj/risc_v/src/angle_to_amp.sv:94]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_OBUF[5] with 1st driver pin 'i_17095/O' [C:/VivPrj/risc_v/src/angle_to_amp.sv:63]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_OBUF[5] with 2nd driver pin 'dds/out_data_sin_reg[5]/Q' [C:/VivPrj/risc_v/src/angle_to_amp.sv:94]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_OBUF[4] with 1st driver pin 'i_17096/O' [C:/VivPrj/risc_v/src/angle_to_amp.sv:63]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_OBUF[4] with 2nd driver pin 'dds/out_data_sin_reg[4]/Q' [C:/VivPrj/risc_v/src/angle_to_amp.sv:94]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_OBUF[3] with 1st driver pin 'i_17097/O' [C:/VivPrj/risc_v/src/angle_to_amp.sv:63]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_OBUF[3] with 2nd driver pin 'dds/out_data_sin_reg[3]/Q' [C:/VivPrj/risc_v/src/angle_to_amp.sv:94]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_OBUF[2] with 1st driver pin 'i_17098/O' [C:/VivPrj/risc_v/src/angle_to_amp.sv:63]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_OBUF[2] with 2nd driver pin 'dds/out_data_sin_reg[2]/Q' [C:/VivPrj/risc_v/src/angle_to_amp.sv:94]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_OBUF[1] with 1st driver pin 'i_17099/O' [C:/VivPrj/risc_v/src/angle_to_amp.sv:63]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_OBUF[1] with 2nd driver pin 'dds/out_data_sin_reg[1]/Q' [C:/VivPrj/risc_v/src/angle_to_amp.sv:94]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_2_OBUF[14] with 1st driver pin 'i_17100/O' [C:/VivPrj/risc_v/src/angle_to_amp.sv:63]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_2_OBUF[14] with 2nd driver pin 'dds_2/out_data_sin_reg[14]/Q' [C:/VivPrj/risc_v/src/angle_to_amp.sv:94]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_2_OBUF[13] with 1st driver pin 'i_17101/O' [C:/VivPrj/risc_v/src/angle_to_amp.sv:63]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_2_OBUF[13] with 2nd driver pin 'dds_2/out_data_sin_reg[13]/Q' [C:/VivPrj/risc_v/src/angle_to_amp.sv:94]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_2_OBUF[12] with 1st driver pin 'i_17102/O' [C:/VivPrj/risc_v/src/angle_to_amp.sv:63]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_2_OBUF[12] with 2nd driver pin 'dds_2/out_data_sin_reg[12]/Q' [C:/VivPrj/risc_v/src/angle_to_amp.sv:94]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_2_OBUF[11] with 1st driver pin 'i_17103/O' [C:/VivPrj/risc_v/src/angle_to_amp.sv:63]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_2_OBUF[11] with 2nd driver pin 'dds_2/out_data_sin_reg[11]/Q' [C:/VivPrj/risc_v/src/angle_to_amp.sv:94]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_2_OBUF[10] with 1st driver pin 'i_17104/O' [C:/VivPrj/risc_v/src/angle_to_amp.sv:63]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_2_OBUF[10] with 2nd driver pin 'dds_2/out_data_sin_reg[10]/Q' [C:/VivPrj/risc_v/src/angle_to_amp.sv:94]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_2_OBUF[9] with 1st driver pin 'i_17105/O' [C:/VivPrj/risc_v/src/angle_to_amp.sv:63]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_2_OBUF[9] with 2nd driver pin 'dds_2/out_data_sin_reg[9]/Q' [C:/VivPrj/risc_v/src/angle_to_amp.sv:94]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_2_OBUF[8] with 1st driver pin 'i_17106/O' [C:/VivPrj/risc_v/src/angle_to_amp.sv:63]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_2_OBUF[8] with 2nd driver pin 'dds_2/out_data_sin_reg[8]/Q' [C:/VivPrj/risc_v/src/angle_to_amp.sv:94]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_2_OBUF[7] with 1st driver pin 'i_17107/O' [C:/VivPrj/risc_v/src/angle_to_amp.sv:63]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_2_OBUF[7] with 2nd driver pin 'dds_2/out_data_sin_reg[7]/Q' [C:/VivPrj/risc_v/src/angle_to_amp.sv:94]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_2_OBUF[6] with 1st driver pin 'i_17108/O' [C:/VivPrj/risc_v/src/angle_to_amp.sv:63]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_2_OBUF[6] with 2nd driver pin 'dds_2/out_data_sin_reg[6]/Q' [C:/VivPrj/risc_v/src/angle_to_amp.sv:94]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_2_OBUF[5] with 1st driver pin 'i_17109/O' [C:/VivPrj/risc_v/src/angle_to_amp.sv:63]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_2_OBUF[5] with 2nd driver pin 'dds_2/out_data_sin_reg[5]/Q' [C:/VivPrj/risc_v/src/angle_to_amp.sv:94]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_2_OBUF[4] with 1st driver pin 'i_17110/O' [C:/VivPrj/risc_v/src/angle_to_amp.sv:63]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_2_OBUF[4] with 2nd driver pin 'dds_2/out_data_sin_reg[4]/Q' [C:/VivPrj/risc_v/src/angle_to_amp.sv:94]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_2_OBUF[3] with 1st driver pin 'i_17111/O' [C:/VivPrj/risc_v/src/angle_to_amp.sv:63]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_2_OBUF[3] with 2nd driver pin 'dds_2/out_data_sin_reg[3]/Q' [C:/VivPrj/risc_v/src/angle_to_amp.sv:94]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_2_OBUF[2] with 1st driver pin 'i_17112/O' [C:/VivPrj/risc_v/src/angle_to_amp.sv:63]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_2_OBUF[2] with 2nd driver pin 'dds_2/out_data_sin_reg[2]/Q' [C:/VivPrj/risc_v/src/angle_to_amp.sv:94]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_2_OBUF[1] with 1st driver pin 'i_17113/O' [C:/VivPrj/risc_v/src/angle_to_amp.sv:63]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin i_component_2_OBUF[1] with 2nd driver pin 'dds_2/out_data_sin_reg[1]/Q' [C:/VivPrj/risc_v/src/angle_to_amp.sv:94]
 
 Report Check Netlist: 
 +------+------------------+-------+---------+-------+------------------+
 |      |Item              |Errors |Warnings |Status |Description       |
 +------+------------------+-------+---------+-------+------------------+
-|1     |multi_driven_nets |      0|       28|Failed |Multi driven nets |
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:54 ; elapsed = 00:00:53 . Memory (MB): peak = 1429.668 ; gain = 1033.570
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:42 ; elapsed = 00:00:39 . Memory (MB): peak = 1378.297 ; gain = 981.469
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -550,25 +619,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:55 ; elapsed = 00:00:54 . Memory (MB): peak = 1429.668 ; gain = 1033.570
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:42 ; elapsed = 00:00:39 . Memory (MB): peak = 1378.297 ; gain = 981.469
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:55 ; elapsed = 00:00:54 . Memory (MB): peak = 1429.668 ; gain = 1033.570
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:42 ; elapsed = 00:00:39 . Memory (MB): peak = 1378.297 ; gain = 981.469
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:55 ; elapsed = 00:00:54 . Memory (MB): peak = 1429.668 ; gain = 1033.570
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:42 ; elapsed = 00:00:39 . Memory (MB): peak = 1378.297 ; gain = 981.469
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:55 ; elapsed = 00:00:54 . Memory (MB): peak = 1429.668 ; gain = 1033.570
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:42 ; elapsed = 00:00:39 . Memory (MB): peak = 1378.297 ; gain = 981.469
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -588,16 +657,16 @@ Report Cell Usage:
 |2     |CARRY4   |    64|
 |3     |DSP48E1  |     3|
 |4     |LUT1     |    60|
-|5     |LUT2     |   213|
-|6     |LUT3     |   213|
-|7     |LUT4     |   216|
-|8     |LUT5     |   347|
-|9     |LUT6     | 10300|
-|10    |MUXF7    |  4352|
-|11    |MUXF8    |  2176|
+|5     |LUT2     |   515|
+|6     |LUT3     |   194|
+|7     |LUT4     |    52|
+|8     |LUT5     |   140|
+|9     |LUT6     |  2724|
+|10    |MUXF7    |  1088|
+|11    |MUXF8    |   544|
 |12    |RAM32M   |    18|
 |13    |RAMB36E1 |    30|
-|14    |FDRE     | 32930|
+|14    |FDRE     |  8326|
 |15    |FDSE     |     4|
 |16    |IBUF     |    39|
 |17    |OBUF     |   192|
@@ -607,39 +676,39 @@ Report Instance Areas:
 +------+--------------+------------------+------+
 |      |Instance      |Module            |Cells |
 +------+--------------+------------------+------+
-|1     |top           |                  | 51158|
-|2     |  alu         |sr_alu            |    87|
-|3     |  data_memory |data_memory       | 48074|
-|4     |  dds         |angle_to_amp      |   305|
+|1     |top           |                  | 13994|
+|2     |  alu         |sr_alu            |    65|
+|3     |  data_memory |data_memory       | 12011|
+|4     |  dds         |angle_to_amp      |   287|
 |5     |    lut       |lut               |    45|
-|6     |  dds_2       |angle_to_amp_0    |   207|
-|7     |  r_pc        |register_with_rst |    44|
-|8     |  rf          |sr_register_file  |  2208|
+|6     |  dds_2       |angle_to_amp_0    |   197|
+|7     |  r_pc        |register_with_rst |    62|
+|8     |  rf          |sr_register_file  |  1139|
 +------+--------------+------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:55 ; elapsed = 00:00:54 . Memory (MB): peak = 1429.668 ; gain = 1033.570
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:42 ; elapsed = 00:00:39 . Memory (MB): peak = 1378.297 ; gain = 981.469
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 62 critical warnings and 12 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:55 ; elapsed = 00:00:54 . Memory (MB): peak = 1429.668 ; gain = 1033.570
-Synthesis Optimization Complete : Time (s): cpu = 00:00:55 ; elapsed = 00:00:54 . Memory (MB): peak = 1429.668 ; gain = 1033.570
+Synthesis finished with 0 errors, 0 critical warnings and 54 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:42 ; elapsed = 00:00:39 . Memory (MB): peak = 1378.297 ; gain = 981.469
+Synthesis Optimization Complete : Time (s): cpu = 00:00:42 ; elapsed = 00:00:39 . Memory (MB): peak = 1378.297 ; gain = 981.469
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 6643 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 1747 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 WARNING: [Netlist 29-101] Netlist 'sr_cpu' is not ideal for floorplanning, since the cellview 'data_memory' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1429.668 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1378.297 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 18 instances were transformed.
   RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 18 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-129 Infos, 13 Warnings, 62 Critical Warnings and 0 Errors encountered.
+260 Infos, 55 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:15 ; elapsed = 00:01:14 . Memory (MB): peak = 1429.668 ; gain = 1076.020
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1429.668 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:59 ; elapsed = 00:00:56 . Memory (MB): peak = 1378.297 ; gain = 1023.727
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1378.297 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/VivPrj/risc_v/risc_v.runs/synth_1/sr_cpu.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file sr_cpu_utilization_synth.rpt -pb sr_cpu_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Sep 30 23:53:45 2026...
+INFO: [Common 17-206] Exiting Vivado at Fri Oct  2 19:20:57 2026...

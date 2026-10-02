@@ -11,20 +11,4 @@ WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 15 f
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 16 for port 'freq_control' [C:/VivPrj/risc_v/src/sr_cpu.sv:163]
 WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 2 for port 'wdSrc' [C:/VivPrj/risc_v/src/sr_cpu.sv:182]
 Completed static elaboration
-Starting simulation data flow analysis
-WARNING: [XSIM 43-4100] "C:/VivPrj/risc_v/risc_v.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.register_with_rst
-Compiling module xil_defaultlib.sr_decode
-Compiling module xil_defaultlib.sr_register_file
-Compiling module xil_defaultlib.sr_alu
-Compiling module xil_defaultlib.data_memory
-Compiling module xil_defaultlib.lut
-Compiling module xil_defaultlib.angle_to_amp
-Compiling module xil_defaultlib.sr_control
-Compiling module xil_defaultlib.sr_cpu
-Compiling module xil_defaultlib.instruction_rom(SIZE=1024)
-Compiling module xil_defaultlib.tb
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot tb_behav
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel

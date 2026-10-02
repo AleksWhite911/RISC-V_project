@@ -9,6 +9,21 @@ module tb;
     logic [ 4:0] regAddr;  // debug access reg address
     wire  [31:0] regData;  // debug access reg data
 
+    //DEBUG_PORTS
+    wire ADD_INSTR;
+    wire OR_INSTR;
+    wire SRL_INSTR;
+    wire SLTU_INSTR;
+    wire SUB_INSTR;
+    wire MUL_INSTR;
+    wire LW_INSTR;
+    wire SW_INSTR;
+    wire ADDI_INSTR;
+    wire LUI_INSTR;
+    wire BEQ_INSTR;
+    wire BNE_INSTR;
+    wire JAL_INSTR;    
+
     sr_cpu cpu
     (
         .clk     ( clk     ),
@@ -18,7 +33,21 @@ module tb;
         .imData  ( imData  ),
 
         .regAddr ( regAddr ),
-        .regData ( regData )
+        .regData ( regData ),
+
+        .ADD_INSTR  ( ADD_INSTR   ),
+        .OR_INSTR   ( OR_INSTR    ),
+        .SRL_INSTR  ( SRL_INSTR   ),
+        .SLTU_INSTR ( SLTU_INSTR  ),
+        .SUB_INSTR  ( SUB_INSTR   ),
+        .MUL_INSTR  ( MUL_INSTR   ),
+        .LW_INSTR   ( LW_INSTR    ),
+        .SW_INSTR   ( SW_INSTR    ),
+        .ADDI_INSTR ( ADDI_INSTR  ),
+        .LUI_INSTR  ( LUI_INSTR   ),
+        .BEQ_INSTR  ( BEQ_INSTR   ),
+        .BNE_INSTR  ( BNE_INSTR   ),
+        .JAL_INSTR  ( JAL_INSTR   )
     );
 
     instruction_rom # (.SIZE (1024)) rom
@@ -34,7 +63,7 @@ module tb;
         clk = 1'b0;
 
         forever
-            # 5 clk = ~ clk;
+          #5 clk = ~ clk;
     end
 
     //------------------------------------------------------------------------
@@ -106,7 +135,7 @@ module tb;
         if (imAddr !== prevImAddr)
             $write (" %h", imAddr);
         else
-            $write ("         ");
+            $write ("Error, pc_counter is stuck!");
 
         if (wasRst & ~ rst & $isunknown (imData))
         begin
