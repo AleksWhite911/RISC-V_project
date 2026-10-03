@@ -37,6 +37,7 @@
 `define RVOP_JAL    7'b1101111
 `define RVOP_SW     7'b0100011
 `define RVOP_LW     7'b0000011
+`define RVOP_AUIPC  7'b0010111
 
 // Instruction funct3
 

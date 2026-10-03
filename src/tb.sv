@@ -24,13 +24,13 @@ module tb;
     wire BNE_INSTR;
     wire JAL_INSTR;    
 
-    sr_cpu cpu
+    risc_v_top cpu
     (
         .clk     ( clk     ),
         .rst     ( rst     ),
 
-        .imAddr  ( imAddr  ),
-        .imData  ( imData  ),
+        .imAddr_debug  ( imAddr  ),
+        .ImData_debug  ( imData  ),
 
         .regAddr ( regAddr ),
         .regData ( regData ),
@@ -48,12 +48,6 @@ module tb;
         .BEQ_INSTR  ( BEQ_INSTR   ),
         .BNE_INSTR  ( BNE_INSTR   ),
         .JAL_INSTR  ( JAL_INSTR   )
-    );
-
-    instruction_rom # (.SIZE (1024)) rom
-    (
-        .a       ( imAddr  ),
-        .rd      ( imData  )
     );
 
     //------------------------------------------------------------------------
@@ -137,7 +131,7 @@ module tb;
         else
             $write ("Error, pc_counter is stuck!");
 
-        if (wasRst & ~ rst & $isunknown (imData))
+        if (wasRst & ~rst & $isunknown (imData))
         begin
             $display ("%s FAIL: fetched instruction at address %x contains Xs: %x",
                 `__FILE__, imAddr, imData);

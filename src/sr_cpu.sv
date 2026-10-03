@@ -37,9 +37,43 @@ module sr_cpu
     wire        wdSrc;
     wire  [2:0] aluControl;
     wire        jal;
+    wire        auipc;
+
+    // program counter
+    wire [31:0] pc;
+    logic [31:0] pcBranch;
+    wire [31:0] pcPlus4  = pc + (32'd4);
+    wire [31:0] pcNext   = pcSrc ? pcBranch : pcPlus4;
+    
+
+     always_comb begin
+      if (jal)
+        pcBranch = pc + immJ;
+      else if (auipc)
+        pcBranch = pc + immU;
+      else
+        pcBranch = pc + immB;
+    end
+
+    wire [31:0] dds_freq_control, dds_freq_control_2;
+
+    logic reg_write_w, ResultSrc, ResultSrcE, MemWrite;
+    logic [4:0] rs1_reg, rs2_reg, rd_reg;
+    logic [31:0] wd3_reg;
+    logic [31:0] ReadData, Result, ImmExt;
+    //for DDS
+    logic [15:0] lfm_coef = '0;
+
+    register_with_rst r_pc (clk, rst, pcNext, pc);
+
+    // program memory access
+
+    assign imAddr = pc >> 2;
+    wire [31:0] instr = imData;
+
+
 
     // instruction decode wires
-
     wire [ 6:0] cmdOp;
     wire [ 4:0] rd;
     wire [ 2:0] cmdF3;
@@ -52,36 +86,7 @@ module sr_cpu
     wire [31:0] immS;
     wire [31:0] immJ;
 
-    // program counter
-
-    wire [31:0] pc;
-    logic [31:0] pcBranch;
-    wire [31:0] pcPlus4  = pc + (32'd4);
-    wire [31:0] pcNext   = pcSrc ? pcBranch : pcPlus4;
-
-     always_comb begin
-      if (jal)
-        pcBranch = pc + immJ;
-      else
-        pcBranch = pc + immB;
-    end
-
-    wire [31:0] dds_freq_control, dds_freq_control_2;
-
-    logic reg_write_w, ResultSrc, ResultSrcE, MemWrite;
-    logic [4:0] rs1_reg, rs2_reg, rd_reg;
-    logic [31:0] wd3_reg;
-    logic [31:0] ReadData, Result, ImmExt;
-
-    register_with_rst r_pc (clk, rst, pcNext, pc);
-
-    // program memory access
-
-    assign imAddr = pc >> 2;
-    wire [31:0] instr = imData;
-
     // instruction decode
-
     sr_decode id
     (
         .instr      ( instr       ),
@@ -100,7 +105,7 @@ module sr_cpu
 
     // register file
 
-    wire [31:0] rd0;
+    wire [31:0] rd0;  //FOR DEBUG!
     wire [31:0] rd1;
     wire [31:0] rd2;
     wire [31:0] wd3;
@@ -170,6 +175,7 @@ module sr_cpu
       .enable(1'b1),
       .I(i_component),
       .Q(q_component),
+      .lfm_coef(lfm_coef),
       .reset_fpga(rst)
     );
 
@@ -179,6 +185,7 @@ module sr_cpu
       .enable(1'b1),
       .I(i_component_2),
       .Q(q_component_2),
+      .lfm_coef(lfm_coef),
       .reset_fpga(rst)
     );
 
@@ -195,6 +202,7 @@ module sr_cpu
         .aluSrc     ( aluSrc      ),
         .wdSrc      ( wdSrc       ),
         .jal        ( jal         ),
+        .auipc      ( auipc       ),
         .aluControl ( aluControl  ),
         .MemWrite   ( MemWrite    ),
         .ResultSrc  ( ResultSrc   ),

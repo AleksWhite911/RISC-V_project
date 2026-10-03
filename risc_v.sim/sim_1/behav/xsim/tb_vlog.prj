@@ -2,7 +2,7 @@
 sv xil_defaultlib  --include "../../../../src" \
 "../../../../src/angle_to_amp.sv" \
 "../../../../src/data_memory.sv" \
-"../../../../../../RISC_V/instruction_rom.sv" \
+"../../../../src/instruction_rom.sv" \
 "../../../../src/lut.sv" \
 "../../../../src/register_with_rst.sv" \
 "../../../../src/sr_alu.sv" \

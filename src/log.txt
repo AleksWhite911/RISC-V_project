@@ -21,8 +21,10 @@ angle_to_amp.sv:45: warning: Port 4 (q_a) of lut expects 15 bits, got 16.
 angle_to_amp.sv:45:        : Padding 1 high bits of the expression.
 angle_to_amp.sv:45: warning: Port 5 (q_b) of lut expects 15 bits, got 16.
 angle_to_amp.sv:45:        : Padding 1 high bits of the expression.
-sr_cpu.sv:167: warning: Port 4 (freq_control) of angle_to_amp expects 16 bits, got 32.
-sr_cpu.sv:167:        : Pruning 16 high bits of the expression.
+sr_cpu.sv:171: warning: Port 1 (lfm_coef) of angle_to_amp expects 32 bits, got 16.
+sr_cpu.sv:171:        : Padding 16 high bits of the port.
+sr_cpu.sv:171: warning: Port 4 (freq_control) of angle_to_amp expects 16 bits, got 32.
+sr_cpu.sv:171:        : Pruning 16 high bits of the expression.
 angle_to_amp.sv:45: warning: Port 1 (addr_a) of lut expects 16 bits, got 15.
 angle_to_amp.sv:45:        : Padding 1 high bits of the port.
 angle_to_amp.sv:45: warning: Port 2 (addr_b) of lut expects 16 bits, got 15.
@@ -31,13 +33,15 @@ angle_to_amp.sv:45: warning: Port 4 (q_a) of lut expects 15 bits, got 16.
 angle_to_amp.sv:45:        : Padding 1 high bits of the expression.
 angle_to_amp.sv:45: warning: Port 5 (q_b) of lut expects 15 bits, got 16.
 angle_to_amp.sv:45:        : Padding 1 high bits of the expression.
-sr_cpu.sv:176: warning: Port 4 (freq_control) of angle_to_amp expects 16 bits, got 32.
-sr_cpu.sv:176:        : Pruning 16 high bits of the expression.
-sr_cpu.sv:187: warning: Port 8 (wdSrc) of sr_control expects 2 bits, got 1.
-sr_cpu.sv:187:        : Padding 1 high bits of the port.
-WARNING: lut.sv:22: $readmemb: Standard inconsistency, following 1364-2005.
-WARNING: lut.sv:22: $readmemb: Standard inconsistency, following 1364-2005.
+sr_cpu.sv:181: warning: Port 1 (lfm_coef) of angle_to_amp expects 32 bits, got 16.
+sr_cpu.sv:181:        : Padding 16 high bits of the port.
+sr_cpu.sv:181: warning: Port 4 (freq_control) of angle_to_amp expects 16 bits, got 32.
+sr_cpu.sv:181:        : Pruning 16 high bits of the expression.
+sr_cpu.sv:193: warning: Port 8 (wdSrc) of sr_control expects 2 bits, got 1.
+sr_cpu.sv:193:        : Padding 1 high bits of the port.
 WARNING: instruction_rom.sv:24: $readmemh(program.hex): Not enough words in the file for the requested range [0:1023].
+WARNING: lut.sv:22: $readmemb: Standard inconsistency, following 1364-2005.
+WARNING: lut.sv:22: $readmemb: Standard inconsistency, following 1364-2005.
 VCD info: dumpfile dump.vcd opened for output.
 VCD warning: $dumpvars: Unsupported argument type (vpiPackage)
 cycle     0     Xxxxxxxx         
