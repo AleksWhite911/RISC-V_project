@@ -8,8 +8,8 @@ module sr_cpu
     output  [31:0]  imAddr,   // instruction memory address
     input   [31:0]  imData,   // instruction memory data
 
-    input   [ 4:0]  regAddr,  // debug access reg address
-    output  [31:0]  regData,   // debug access reg data
+    input   [ 4:0] regAddr,  // debug access reg address
+    output  [31:0] regData,   // debug access reg data
     output [15:0] i_component, q_component, i_component_2, q_component_2,
     output [31:0] gpio_port_a, gpio_port_b,
 
@@ -34,33 +34,24 @@ module sr_cpu
     wire        pcSrc;
     wire        regWrite;
     wire        aluSrc;
-    wire        wdSrc;
-    wire  [2:0] aluControl;
-    wire        jal;
-    wire        auipc;
+    wire [2:0]  aluControl;
+    wire [1:0]  branch_src;
+    wire [1:0]  ResultSrc;
 
     // program counter
-    wire [31:0] pc;
     logic [31:0] pcBranch;
+    wire [31:0] pc;
     wire [31:0] pcPlus4  = pc + (32'd4);
     wire [31:0] pcNext   = pcSrc ? pcBranch : pcPlus4;
-    
 
-     always_comb begin
-      if (jal)
-        pcBranch = pc + immJ;
-      else if (auipc)
-        pcBranch = pc + immU;
-      else
-        pcBranch = pc + immB;
-    end
 
+    logic [31:0] ResultSrcMux;
     wire [31:0] dds_freq_control, dds_freq_control_2;
 
-    logic reg_write_w, ResultSrc, ResultSrcE, MemWrite;
+    logic reg_write_w, MemWrite;
     logic [4:0] rs1_reg, rs2_reg, rd_reg;
     logic [31:0] wd3_reg;
-    logic [31:0] ReadData, Result, ImmExt;
+    logic [31:0] ReadData, ImmExt;
     //for DDS
     logic [15:0] lfm_coef = '0;
 
@@ -85,6 +76,56 @@ module sr_cpu
     wire [31:0] immU;
     wire [31:0] immS;
     wire [31:0] immJ;
+
+
+    always_comb begin
+      case (branch_src)
+        `PC_BRANCH_B: begin
+          pcBranch = pc + immB;
+        end
+
+        `PC_BRANCH_J: begin
+          pcBranch = pc + immJ;
+        end
+
+        `PC_BRANCH_U: begin
+          pcBranch = pc + immU;
+        end
+
+        default: begin
+          pcBranch = pc + 32'd4;
+        end
+      endcase
+    end
+
+
+    always_comb begin
+      case (ResultSrc)
+        `RES_SRC_ALU: begin
+          ResultSrcMux = aluResult;
+        end
+
+        `RES_SRC_MEM: begin
+          ResultSrcMux = ReadData;
+        end
+
+        `RES_SRC_JAL: begin
+          ResultSrcMux = pcPlus4;
+        end
+
+        `RES_SRC_LUI: begin
+          ResultSrcMux = immU;
+        end
+
+        `RES_SRC_AUIPC: begin
+          ResultSrcMux = pc + immU;
+        end
+
+      endcase
+    end
+
+    assign wd3 = ResultSrcMux;
+
 
     // instruction decode
     sr_decode id
@@ -132,10 +173,6 @@ module sr_cpu
     wire [1:0] immSrc;
 
     always_comb
-      if (~ResultSrc) Result = aluResult;
-      else Result = ReadData;
-
-    always_comb
       case (immSrc)
         '0     : ImmExt = immI;
         2'b01  : ImmExt = immS;
@@ -166,8 +203,6 @@ module sr_cpu
       .gpio_port_a(gpio_port_a),
       .gpio_port_b(gpio_port_b)
     );
-      
-    assign wd3 = wdSrc ? immU : Result;
 
     angle_to_amp dds (
       .freq_control(dds_freq_control),
@@ -193,33 +228,31 @@ module sr_cpu
 
     sr_control sm_control
     (
-        .cmdOp      ( cmdOp       ),
-        .cmdF3      ( cmdF3       ),
-        .cmdF7      ( cmdF7       ),
-        .aluZero    ( aluZero     ),
-        .pcSrc      ( pcSrc       ),
-        .regWrite   ( regWrite    ),
-        .aluSrc     ( aluSrc      ),
-        .wdSrc      ( wdSrc       ),
-        .jal        ( jal         ),
-        .auipc      ( auipc       ),
-        .aluControl ( aluControl  ),
-        .MemWrite   ( MemWrite    ),
-        .ResultSrc  ( ResultSrc   ),
-        .immSrc     ( immSrc      ),
-        .ADD_INSTR  ( ADD_INSTR   ),
-        .OR_INSTR   ( OR_INSTR    ),
-        .SRL_INSTR  ( SRL_INSTR   ),
-        .SLTU_INSTR ( SLTU_INSTR  ),
-        .SUB_INSTR  ( SUB_INSTR   ),
-        .MUL_INSTR  ( MUL_INSTR   ),
-        .LW_INSTR   ( LW_INSTR    ),
-        .SW_INSTR   ( SW_INSTR    ),
-        .ADDI_INSTR ( ADDI_INSTR  ),
-        .LUI_INSTR  ( LUI_INSTR   ),
-        .BEQ_INSTR  ( BEQ_INSTR   ),
-        .BNE_INSTR  ( BNE_INSTR   ),
-        .JAL_INSTR  ( JAL_INSTR   )
+        .cmdOp      ( cmdOp           ),
+        .cmdF3      ( cmdF3           ),
+        .cmdF7      ( cmdF7           ),
+        .aluZero    ( aluZero         ),
+        .pcSrc      ( pcSrc           ),
+        .regWrite   ( regWrite        ),
+        .aluSrc     ( aluSrc          ),
+        .branch_src ( branch_src      ),
+        .aluControl ( aluControl      ),
+        .MemWrite   ( MemWrite        ),
+        .ResultSrc  ( ResultSrc       ),
+        .immSrc     ( immSrc          ),
+        .ADD_INSTR  ( ADD_INSTR       ),
+        .OR_INSTR   ( OR_INSTR        ),
+        .SRL_INSTR  ( SRL_INSTR       ),
+        .SLTU_INSTR ( SLTU_INSTR      ),
+        .SUB_INSTR  ( SUB_INSTR       ),
+        .MUL_INSTR  ( MUL_INSTR       ),
+        .LW_INSTR   ( LW_INSTR        ),
+        .SW_INSTR   ( SW_INSTR        ),
+        .ADDI_INSTR ( ADDI_INSTR      ),
+        .LUI_INSTR  ( LUI_INSTR       ),
+        .BEQ_INSTR  ( BEQ_INSTR       ),
+        .BNE_INSTR  ( BNE_INSTR       ),
+        .JAL_INSTR  ( JAL_INSTR       )
     );
 
     // debug register access

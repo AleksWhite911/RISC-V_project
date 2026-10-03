@@ -1,6 +1,6 @@
 module data_memory
 #(
-    parameter SIZE = 1024
+    parameter SIZE = 64
 )
 (
     input clk, we,
@@ -23,7 +23,7 @@ module data_memory
   assign gpio_port_a        = ram[2];
   assign gpio_port_b        = ram[3];
 
-    assign rd               = ram[memory_address];
+  assign rd               = ram[memory_address];
 
   always_ff @ (posedge clk)
     if (we) ram[memory_address] <= wd;
