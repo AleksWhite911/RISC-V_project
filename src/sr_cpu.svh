@@ -67,13 +67,12 @@
 // PC Branch source Gray Coding
 `define PC_BRANCH_B 2'b00
 `define PC_BRANCH_J 2'b10
-`define PC_BRANCH_U 2'b11
 
 // Result source Gray Coding
-`define RES_SRC_ALU   2'b00
-`define RES_SRC_MEM   2'b01
-`define RES_SRC_JAL   2'b11
-`define RES_SRC_LUI   2'b10
-`define RES_SRC_AUIPC 2'b11
+`define RES_SRC_ALU   3'b000
+`define RES_SRC_MEM   3'b001
+`define RES_SRC_JAL   3'b011
+`define RES_SRC_LUI   3'b010
+`define RES_SRC_AUIPC 3'b110
 
 `endif  // `ifndef SR_CPU_SVH

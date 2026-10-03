@@ -10,7 +10,7 @@ module sr_control
     output logic        regWrite,
     output logic        aluSrc,
     output logic        MemWrite,
-    output logic [ 1:0] ResultSrc,
+    output logic [2:0] ResultSrc,
     output logic [ 2:0] aluControl,
     output logic [ 1:0] immSrc,
     output logic [1:0]  branch_src,
@@ -35,9 +35,8 @@ module sr_control
     logic          branch;
     logic          condZero;
     logic          jal;
-    logic          auipc;
 
-  assign  pcSrc = branch & (aluZero == condZero) | jal | auipc;
+  assign  pcSrc = branch & (aluZero == condZero) | jal;
 
     always_comb
     begin
@@ -50,7 +49,6 @@ module sr_control
         ResultSrc   = `RES_SRC_ALU;
         immSrc      =           '0;
         jal         =           '0;
-        auipc       =           '0;
 
         aluControl  =     `ALU_ADD;
         //DEBUG PORTS
@@ -79,7 +77,7 @@ module sr_control
             { `RVF7_ANY,  `RVF3_SW,   `RVOP_SW   } : begin MemWrite = 1'b1; aluControl = `ALU_ADD; aluSrc = 1'b1; immSrc = 2'b01; SW_INSTR = 1'b1; end
             { `RVF7_ANY,  `RVF3_ADDI, `RVOP_ADDI } : begin regWrite = 1'b1; aluSrc = 1'b1; aluControl = `ALU_ADD; ADDI_INSTR = 1'b1; end
             { `RVF7_ANY,  `RVF3_ANY,  `RVOP_LUI  } : begin regWrite = 1'b1; ResultSrc = `RES_SRC_LUI; LUI_INSTR = 1'b1; end
-            { `RVF7_ANY,  `RVF3_ANY,  `RVOP_AUIPC} : begin branch = 1'b1; branch_src = `PC_BRANCH_U; regWrite = 1'b1; ResultSrc = `RES_SRC_AUIPC; auipc = 1'b1; end
+            { `RVF7_ANY,  `RVF3_ANY,  `RVOP_AUIPC} : begin regWrite = 1'b1; ResultSrc = `RES_SRC_AUIPC; end
             { `RVF7_ANY,  `RVF3_BEQ,  `RVOP_BEQ  } : begin branch = 1'b1; condZero = 1'b1; aluControl = `ALU_SUB; BEQ_INSTR = 1'b1; end
             { `RVF7_ANY,  `RVF3_BNE,  `RVOP_BNE  } : begin branch = 1'b1; aluControl = `ALU_SUB; BNE_INSTR = 1'b1; end
             { `RVF7_ANY,  `RVF3_ANY,  `RVOP_JAL  } : begin branch = 1'b1; branch_src = `PC_BRANCH_J; ResultSrc = `RES_SRC_JAL; regWrite = 1'b1; aluControl = `ALU_ADD; jal = 1'b1; JAL_INSTR = 1'b1; end

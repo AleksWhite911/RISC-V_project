@@ -36,7 +36,7 @@ module sr_cpu
     wire        aluSrc;
     wire [2:0]  aluControl;
     wire [1:0]  branch_src;
-    wire [1:0]  ResultSrc;
+    wire [2:0]  ResultSrc;
 
     // program counter
     logic [31:0] pcBranch;
@@ -88,43 +88,12 @@ module sr_cpu
           pcBranch = pc + immJ;
         end
 
-        `PC_BRANCH_U: begin
-          pcBranch = pc + immU;
-        end
-
         default: begin
           pcBranch = pc + 32'd4;
         end
       endcase
     end
 
-
-    always_comb begin
-      case (ResultSrc)
-        `RES_SRC_ALU: begin
-          ResultSrcMux = aluResult;
-        end
-
-        `RES_SRC_MEM: begin
-          ResultSrcMux = ReadData;
-        end
-
-        `RES_SRC_JAL: begin
-          ResultSrcMux = pcPlus4;
-        end
-
-        `RES_SRC_LUI: begin
-          ResultSrcMux = immU;
-        end
-
-        `RES_SRC_AUIPC: begin
-          ResultSrcMux = pc + immU;
-        end
-
-      endcase
-    end
-
-    assign wd3 = ResultSrcMux;
 
 
     // instruction decode
@@ -179,6 +148,7 @@ module sr_cpu
         2'b10  : ImmExt = immB;
         default: ImmExt = immI;
     endcase
+    
 
     sr_alu alu
     (
@@ -190,6 +160,36 @@ module sr_cpu
         .zero       ( aluZero     ),
         .result     ( aluResult   )
     );
+
+    always_comb begin
+      case (ResultSrc)
+        `RES_SRC_ALU: begin
+          ResultSrcMux = aluResult;
+        end
+
+        `RES_SRC_MEM: begin
+          ResultSrcMux = ReadData;
+        end
+
+        `RES_SRC_JAL: begin
+          ResultSrcMux = pcPlus4;
+        end
+
+        `RES_SRC_LUI: begin
+          ResultSrcMux = immU;
+        end
+
+        `RES_SRC_AUIPC: begin
+          ResultSrcMux = pc + immU;
+        end
+
+        default: begin
+          ResultSrcMux = aluResult;
+        end
+      endcase
+    end
+
+    assign wd3 = ResultSrcMux;
 
     data_memory data_memory
     (
