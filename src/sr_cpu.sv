@@ -257,7 +257,6 @@ module sr_cpu
     );
 
     // debug register access
-
     assign regData = (regAddr != '0) ? rd0 : pc;
 
 endmodule

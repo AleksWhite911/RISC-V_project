@@ -1,5 +1,5 @@
 # RISC-V Single-stage Processor
-# Autors : RenAshbell(Anatoly Alekseev).
+# Author : RenAshbell(Anatoly Alekseev).
 
 It is my hobby work.
 This project is a fork of the repository https://github.com/zhelnio/schoolRISCV
