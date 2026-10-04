@@ -1,4 +1,4 @@
-module tb;
+module tb_lfm;
 
     logic        clk;
     logic        rst;
@@ -126,8 +126,10 @@ module tb;
             $write ("    ");
         end
 
-        if (imAddr !== prevImAddr)
+        if ((imAddr !== prevImAddr))
             $write (" %h", imAddr);
+        else if (rst)
+            $write ("rst_state");
         else
             $write ("Error, pc_counter is stuck!");
 

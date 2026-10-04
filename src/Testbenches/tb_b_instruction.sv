@@ -10,7 +10,7 @@
 //  for systemverilog-homework project.
 //
 
-module tb;
+module tb_b_instruction;
 
     logic        clk;
     logic        rst;

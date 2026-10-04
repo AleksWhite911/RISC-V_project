@@ -123,6 +123,7 @@ module sr_cpu
     sr_register_file rf
     (
         .clk        ( clk         ),
+        .rst        ( rst         ),
         .a0         ( regAddr     ),
         .a1         ( rs1         ),
         .a2         ( rs2         ),
