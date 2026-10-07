@@ -37,14 +37,16 @@ module risc_v_top (
 );
 
   logic [31:0] imAddr, imData;
+  logic enable_memory = 1'b1;
 
   assign imAddr_debug = imAddr;
   assign ImData_debug = imData;
 
 
-
     instruction_rom # (.SIZE (1024)) rom
     (
+      .clk(clk),
+      .en(enable_memory),
       .a(imAddr),
       .rd(imData)
     );

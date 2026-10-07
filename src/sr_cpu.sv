@@ -45,12 +45,25 @@ module sr_cpu
     wire [31:0] pcNext   = pcSrc ? pcBranch : pcPlus4;
 
 
+    //Fetch stage
+    logic [31:0] pcPlus4D;
+    logic [31:0] pcd;
+
+    always_ff @(posedge clk or posedge rst) begin
+      if (rst) begin
+        pcPlus4D <= '0;
+        pcd <= '0;
+      end else begin
+        pcPlus4D <= pcPlus4;
+        pcd <= pc;
+      end
+    end
+
+
     logic [31:0] ResultSrcMux;
     wire [31:0] dds_freq_control, dds_freq_control_2;
 
     logic reg_write_w, MemWrite;
-    logic [4:0] rs1_reg, rs2_reg, rd_reg;
-    logic [31:0] wd3_reg;
     logic [31:0] ReadData, ImmExt;
     //for DDS
     logic [15:0] lfm_coef = '0;
@@ -61,6 +74,7 @@ module sr_cpu
 
     assign imAddr = pc >> 2;
     wire [31:0] instr = imData;
+
 
 
 
@@ -81,15 +95,15 @@ module sr_cpu
     always_comb begin
       case (branch_src)
         `PC_BRANCH_B: begin
-          pcBranch = pc + immB;
+          pcBranch = pcd + immB;
         end
 
         `PC_BRANCH_J: begin
-          pcBranch = pc + immJ;
+          pcBranch = pcd + immJ;
         end
 
         default: begin
-          pcBranch = pc + 32'd4;
+          pcBranch = pcPlus4D;
         end
       endcase
     end
@@ -173,7 +187,7 @@ module sr_cpu
         end
 
         `RES_SRC_JAL: begin
-          ResultSrcMux = pcPlus4;
+          ResultSrcMux = pcPlus4D;
         end
 
         `RES_SRC_LUI: begin
@@ -181,7 +195,7 @@ module sr_cpu
         end
 
         `RES_SRC_AUIPC: begin
-          ResultSrcMux = pc + immU;
+          ResultSrcMux = pcd + immU;
         end
 
         default: begin
@@ -257,6 +271,6 @@ module sr_cpu
     );
 
     // debug register access
-    assign regData = (regAddr != '0) ? rd0 : pc;
+    assign regData = (regAddr != '0) ? rd0 : pcd;
 
 endmodule
