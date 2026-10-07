@@ -1,3 +1,4 @@
+`include "sr_cpu.svh"
 module instruction_rom
 #(
     parameter SIZE = 64
@@ -5,7 +6,7 @@ module instruction_rom
 (
     input         clk,
     input  [31:0] a,
-    input         en,
+    input         stall,
     output logic [31:0] rd
 );
     reg [31:0] rom [0:SIZE - 1];
@@ -13,8 +14,10 @@ module instruction_rom
 
 
     always_ff @(posedge clk) begin
-      if (en) begin
+      if (~stall) begin
         rd <= rom [a];
+      end else begin
+        rd <= `NOP;
       end
     end
 

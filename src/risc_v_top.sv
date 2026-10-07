@@ -1,3 +1,4 @@
+`include "sr_cpu.svh"
 module risc_v_top (
 
   //clock and rst
@@ -37,7 +38,7 @@ module risc_v_top (
 );
 
   logic [31:0] imAddr, imData;
-  logic enable_memory = 1'b1;
+  wire stall;
 
   assign imAddr_debug = imAddr;
   assign ImData_debug = imData;
@@ -46,7 +47,7 @@ module risc_v_top (
     instruction_rom # (.SIZE (1024)) rom
     (
       .clk(clk),
-      .en(enable_memory),
+      .stall(stall),
       .a(imAddr),
       .rd(imData)
     );
@@ -58,6 +59,7 @@ module risc_v_top (
     .imData(imData),
     .regAddr(regAddr),
     .regData(regData),
+    .stall(stall),
 
     //Periphery module's
     .gpio_port_a(gpio_port_a),

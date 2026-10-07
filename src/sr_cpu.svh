@@ -75,4 +75,7 @@
 `define RES_SRC_LUI   3'b010
 `define RES_SRC_AUIPC 3'b110
 
+
+`define NOP     32'h00000013;
+
 `endif  // `ifndef SR_CPU_SVH

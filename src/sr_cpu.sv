@@ -12,6 +12,8 @@ module sr_cpu
     output  [31:0] regData,   // debug access reg data
     output [15:0] i_component, q_component, i_component_2, q_component_2,
     output [31:0] gpio_port_a, gpio_port_b,
+    
+    output stall,
 
     //DEBUG PORTS CONTROL
     output logic ADD_INSTR,
@@ -44,6 +46,8 @@ module sr_cpu
     wire [31:0] pcPlus4  = pc + (32'd4);
     wire [31:0] pcNext   = pcSrc ? pcBranch : pcPlus4;
 
+    assign stall = pcSrc ? 1'b1 : 1'b0; //stall pc if branch instruction
+
 
     //Fetch stage
     logic [31:0] pcPlus4D;
@@ -60,6 +64,7 @@ module sr_cpu
     end
 
 
+
     logic [31:0] ResultSrcMux;
     wire [31:0] dds_freq_control, dds_freq_control_2;
 
@@ -71,12 +76,8 @@ module sr_cpu
     register_with_rst r_pc (clk, rst, pcNext, pc);
 
     // program memory access
-
     assign imAddr = pc >> 2;
     wire [31:0] instr = imData;
-
-
-
 
     // instruction decode wires
     wire [ 6:0] cmdOp;
@@ -128,7 +129,6 @@ module sr_cpu
     );
 
     // register file
-
     wire [31:0] rd0;  //FOR DEBUG!
     wire [31:0] rd1;
     wire [31:0] rd2;
