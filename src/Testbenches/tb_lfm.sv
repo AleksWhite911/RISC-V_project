@@ -10,24 +10,23 @@ module tb_lfm;
     wire  [31:0] regData;  // debug access reg data
 
     //DEBUG_PORTS
-    wire ADD_INSTR;
-    wire OR_INSTR;
-    wire SRL_INSTR;
-    wire SLTU_INSTR;
-    wire SUB_INSTR;
-    wire MUL_INSTR;
-    wire LW_INSTR;
-    wire SW_INSTR;
-    wire ADDI_INSTR;
-    wire LUI_INSTR;
-    wire BEQ_INSTR;
-    wire BNE_INSTR;
-    wire JAL_INSTR;    
+    wire [13:0] decode_instr;
+    wire [31:0] rd_0_debug;
+    wire [31:0] rd_1_debug;
+    wire [31:0] wd_debug;
+    wire        regWrite_debug;
+    wire [2:0]  aluControl_debug;
 
     risc_v_top cpu
     (
         .clk     ( clk     ),
         .rst     ( rst     ),
+
+        .rd_0_debug(rd_0_debug),
+        .rd_1_debug(rd_1_debug),
+        .wd_debug(wd_debug),
+        .regWrite_debug(regWrite_debug),
+        .aluControl_debug(aluControl_debug),
 
         .imAddr_debug  ( imAddr  ),
         .ImData_debug  ( imData  ),
@@ -35,25 +34,13 @@ module tb_lfm;
         .regAddr ( regAddr ),
         .regData ( regData ),
 
-        .ADD_INSTR  ( ADD_INSTR   ),
-        .OR_INSTR   ( OR_INSTR    ),
-        .SRL_INSTR  ( SRL_INSTR   ),
-        .SLTU_INSTR ( SLTU_INSTR  ),
-        .SUB_INSTR  ( SUB_INSTR   ),
-        .MUL_INSTR  ( MUL_INSTR   ),
-        .LW_INSTR   ( LW_INSTR    ),
-        .SW_INSTR   ( SW_INSTR    ),
-        .ADDI_INSTR ( ADDI_INSTR  ),
-        .LUI_INSTR  ( LUI_INSTR   ),
-        .BEQ_INSTR  ( BEQ_INSTR   ),
-        .BNE_INSTR  ( BNE_INSTR   ),
-        .JAL_INSTR  ( JAL_INSTR   )
+        .decode_instr(decode_instr)
+
     );
 
     //------------------------------------------------------------------------
 
-    initial
-    begin
+    initial begin
         clk = 1'b0;
 
         forever
@@ -62,8 +49,7 @@ module tb_lfm;
 
     //------------------------------------------------------------------------
 
-    initial
-    begin
+    initial begin
         rst <= 1'bx;
         repeat (2) @ (posedge clk);
         rst <= 1'b1;
@@ -73,12 +59,8 @@ module tb_lfm;
 
     //------------------------------------------------------------------------
 
-    initial
-    begin
+    initial begin
         `ifdef __ICARUS__
-            // Uncomment the following `define
-            // to generate a VCD file and analyze it using GTKwave
-
             $dumpvars;
         `endif
 
@@ -90,8 +72,7 @@ module tb_lfm;
         begin
             @ (posedge clk);
 
-            if (  regData == 32'h00213d05 )   // Fibonacci
-            //     | regData == 32'h1c8cfc00 )  // Factorial
+            if ( regData == 32'h1c8cfc00 )  // Factorial
             begin
                  $display ("%s PASS", `__FILE__);
                  $finish;
@@ -112,26 +93,82 @@ module tb_lfm;
     logic [31:0] prevImAddr;
     logic [31:0] prevRegData;
 
-    always @ (posedge clk)
+    always_ff @ (posedge clk)
     begin
-        $write ("cycle %5d", cycle ++);
+        $write ("cycle %5d\n", cycle++);
 
         if (rst)
         begin
-            $write (" rst");
+            $write ("rst - signal assert! \n");
             wasRst <= 1'b1;
         end
         else
         begin
-            $write ("    ");
-        end
+          case(decode_instr)
 
-        if ((imAddr !== prevImAddr))
-            $write (" %h", imAddr);
-        else if (rst)
-            $write ("rst_state");
-        else
-            $write ("Error, pc_counter is stuck!");
+            14'd1: begin
+              $display("Detect ADD instruction!\n");
+              $display("Instruction value: rs1 - %5d, rs2 - %5d, rd - %5d\n", imData[19:15],  imData[24:20],  imData[11:7]);
+
+            end
+
+            14'd2: begin
+              $display("Detect OR instruction! - \n");
+            end
+
+            14'd3: begin
+              $display("Detect SLR instruction! - \n");
+            end
+
+            14'd4: begin
+              $display("Detect SLTU instruction! - \n");
+            end
+
+            14'd5: begin
+              $display("Detect SUB instruction! - \n");
+            end
+
+            14'd6: begin
+              $display("Detect MUL instruction! - \n");
+            end
+
+            14'd7: begin
+              $display("Detect LW instruction! - \n");
+            end
+
+            14'd8: begin
+              $display("Detect SW instruction! - \n");
+            end
+
+            14'd9: begin
+              $display("Detect ADDI instruction!");
+              $display("Instruction value: constant - %d, rs1 - %d, rd - %d", imData[31:20],  imData[19:15],  imData[11:7]);
+              $display();
+
+
+            end
+
+            14'd10: begin
+              $display("Detect LUI instruction! - \n");
+            end
+
+            14'd11: begin
+              $display("Detect AUIPC instruction! - \n");
+            end
+
+            14'd12: begin
+              $display("Detect BEQ instruction! - \n");
+            end
+
+            14'd13: begin
+              $display("Detect BNE instruction! - \n");
+            end
+
+            14'd14: begin
+              $display("Detect JAL instruction! - \n");
+            end
+          endcase
+        end
 
         if (wasRst & ~rst & $isunknown (imData))
         begin
@@ -141,10 +178,7 @@ module tb_lfm;
             //$finish;
         end
 
-        if (regData !== prevRegData)
-            $write (" %h", regData);
-        else
-            $write ("         ");
+
 
         prevImAddr  <= imAddr;
         prevRegData <= regData;

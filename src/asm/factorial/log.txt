@@ -1,0 +1,303 @@
+../../sr_decode.sv:26: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+../../sr_decode.sv:26: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+../../sr_decode.sv:33: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+../../sr_decode.sv:33: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+../../sr_decode.sv:33: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+../../sr_decode.sv:33: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+../../sr_decode.sv:43: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+../../sr_decode.sv:43: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+../../sr_decode.sv:43: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+../../sr_decode.sv:51: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+../../sr_decode.sv:58: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+../../sr_decode.sv:58: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+../../sr_decode.sv:58: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+../../sr_decode.sv:58: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+../../sr_alu.sv:13: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+../../angle_to_amp.sv:45: warning: Port 1 (addr_a) of lut expects 16 bits, got 15.
+../../angle_to_amp.sv:45:        : Padding 1 high bits of the port.
+../../angle_to_amp.sv:45: warning: Port 2 (addr_b) of lut expects 16 bits, got 15.
+../../angle_to_amp.sv:45:        : Padding 1 high bits of the port.
+../../angle_to_amp.sv:45: warning: Port 4 (q_a) of lut expects 15 bits, got 16.
+../../angle_to_amp.sv:45:        : Padding 1 high bits of the expression.
+../../angle_to_amp.sv:45: warning: Port 5 (q_b) of lut expects 15 bits, got 16.
+../../angle_to_amp.sv:45:        : Padding 1 high bits of the expression.
+../../sr_cpu.sv:224: warning: Port 1 (lfm_coef) of angle_to_amp expects 32 bits, got 16.
+../../sr_cpu.sv:224:        : Padding 16 high bits of the port.
+../../sr_cpu.sv:224: warning: Port 4 (freq_control) of angle_to_amp expects 16 bits, got 32.
+../../sr_cpu.sv:224:        : Pruning 16 high bits of the expression.
+../../angle_to_amp.sv:45: warning: Port 1 (addr_a) of lut expects 16 bits, got 15.
+../../angle_to_amp.sv:45:        : Padding 1 high bits of the port.
+../../angle_to_amp.sv:45: warning: Port 2 (addr_b) of lut expects 16 bits, got 15.
+../../angle_to_amp.sv:45:        : Padding 1 high bits of the port.
+../../angle_to_amp.sv:45: warning: Port 4 (q_a) of lut expects 15 bits, got 16.
+../../angle_to_amp.sv:45:        : Padding 1 high bits of the expression.
+../../angle_to_amp.sv:45: warning: Port 5 (q_b) of lut expects 15 bits, got 16.
+../../angle_to_amp.sv:45:        : Padding 1 high bits of the expression.
+../../sr_cpu.sv:234: warning: Port 1 (lfm_coef) of angle_to_amp expects 32 bits, got 16.
+../../sr_cpu.sv:234:        : Padding 16 high bits of the port.
+../../sr_cpu.sv:234: warning: Port 4 (freq_control) of angle_to_amp expects 16 bits, got 32.
+../../sr_cpu.sv:234:        : Pruning 16 high bits of the expression.
+../../Testbenches/tb_lfm.sv:98: warning: System task ($write) cannot be synthesized in an always_ff process.
+../../Testbenches/tb_lfm.sv:102: warning: System task ($write) cannot be synthesized in an always_ff process.
+../../Testbenches/tb_lfm.sv:110: warning: System task ($display) cannot be synthesized in an always_ff process.
+../../Testbenches/tb_lfm.sv:111: warning: System task ($display) cannot be synthesized in an always_ff process.
+../../Testbenches/tb_lfm.sv:116: warning: System task ($display) cannot be synthesized in an always_ff process.
+../../Testbenches/tb_lfm.sv:120: warning: System task ($display) cannot be synthesized in an always_ff process.
+../../Testbenches/tb_lfm.sv:124: warning: System task ($display) cannot be synthesized in an always_ff process.
+../../Testbenches/tb_lfm.sv:128: warning: System task ($display) cannot be synthesized in an always_ff process.
+../../Testbenches/tb_lfm.sv:132: warning: System task ($display) cannot be synthesized in an always_ff process.
+../../Testbenches/tb_lfm.sv:136: warning: System task ($display) cannot be synthesized in an always_ff process.
+../../Testbenches/tb_lfm.sv:140: warning: System task ($display) cannot be synthesized in an always_ff process.
+../../Testbenches/tb_lfm.sv:144: warning: System task ($display) cannot be synthesized in an always_ff process.
+../../Testbenches/tb_lfm.sv:145: warning: System task ($display) cannot be synthesized in an always_ff process.
+../../Testbenches/tb_lfm.sv:146: warning: System task ($display) cannot be synthesized in an always_ff process.
+../../Testbenches/tb_lfm.sv:152: warning: System task ($display) cannot be synthesized in an always_ff process.
+../../Testbenches/tb_lfm.sv:156: warning: System task ($display) cannot be synthesized in an always_ff process.
+../../Testbenches/tb_lfm.sv:160: warning: System task ($display) cannot be synthesized in an always_ff process.
+../../Testbenches/tb_lfm.sv:164: warning: System task ($display) cannot be synthesized in an always_ff process.
+../../Testbenches/tb_lfm.sv:168: warning: System task ($display) cannot be synthesized in an always_ff process.
+../../Testbenches/tb_lfm.sv:175: warning: System task ($display) cannot be synthesized in an always_ff process.
+../../Testbenches/tb_lfm.sv:186: warning: System task ($display) cannot be synthesized in an always_ff process.
+WARNING: ../../instruction_rom.sv:29: $readmemh(program.hex): Not enough words in the file for the requested range [0:1023].
+WARNING: ../../lut.sv:22: $readmemb: The behaviour for reg[...] mem[N:0]; $readmemb("...", mem); changed in the 1364-2005 standard. To avoid ambiguity, use mem[0:N] or explicit range parameters $readmemb("...", mem, start, stop);. Defaulting to 1364-2005 behavior.
+WARNING: ../../lut.sv:22: $readmemb: The behaviour for reg[...] mem[N:0]; $readmemb("...", mem); changed in the 1364-2005 standard. To avoid ambiguity, use mem[0:N] or explicit range parameters $readmemb("...", mem, start, stop);. Defaulting to 1364-2005 behavior.
+VCD info: dumpfile dump.vcd opened for output.
+VCD warning: $dumpvars: Package ($unit) is not dumpable with VCD.
+cycle     0
+
+cycle     1
+
+cycle     2
+rst - signal assert! 
+
+cycle     3
+rst - signal assert! 
+
+cycle     4
+Detect ADDI instruction!
+Instruction value: constant -    0, rs1 -  0, rd -  0
+
+
+cycle     5
+Detect LUI instruction! - 
+
+
+cycle     6
+Detect ADDI instruction!
+Instruction value: constant -    1, rs1 -  0, rd - 10
+
+
+cycle     7
+Detect ADDI instruction!
+Instruction value: constant -    1, rs1 -  0, rd -  5
+
+
+cycle     8
+Detect MUL instruction! - 
+
+
+cycle     9
+Detect ADDI instruction!
+Instruction value: constant -    1, rs1 -  5, rd -  5
+
+
+cycle    10
+Detect BEQ instruction! - 
+
+
+cycle    11
+Detect ADDI instruction!
+Instruction value: constant -    0, rs1 -  0, rd -  0
+
+
+cycle    12
+Detect MUL instruction! - 
+
+
+cycle    13
+Detect ADDI instruction!
+Instruction value: constant -    1, rs1 -  5, rd -  5
+
+
+cycle    14
+Detect BEQ instruction! - 
+
+
+cycle    15
+Detect ADDI instruction!
+Instruction value: constant -    0, rs1 -  0, rd -  0
+
+
+cycle    16
+Detect MUL instruction! - 
+
+
+cycle    17
+Detect ADDI instruction!
+Instruction value: constant -    1, rs1 -  5, rd -  5
+
+
+cycle    18
+Detect BEQ instruction! - 
+
+
+cycle    19
+Detect ADDI instruction!
+Instruction value: constant -    0, rs1 -  0, rd -  0
+
+
+cycle    20
+Detect MUL instruction! - 
+
+
+cycle    21
+Detect ADDI instruction!
+Instruction value: constant -    1, rs1 -  5, rd -  5
+
+
+cycle    22
+Detect BEQ instruction! - 
+
+
+cycle    23
+Detect ADDI instruction!
+Instruction value: constant -    0, rs1 -  0, rd -  0
+
+
+cycle    24
+Detect MUL instruction! - 
+
+
+cycle    25
+Detect ADDI instruction!
+Instruction value: constant -    1, rs1 -  5, rd -  5
+
+
+cycle    26
+Detect BEQ instruction! - 
+
+
+cycle    27
+Detect ADDI instruction!
+Instruction value: constant -    0, rs1 -  0, rd -  0
+
+
+cycle    28
+Detect MUL instruction! - 
+
+
+cycle    29
+Detect ADDI instruction!
+Instruction value: constant -    1, rs1 -  5, rd -  5
+
+
+cycle    30
+Detect BEQ instruction! - 
+
+
+cycle    31
+Detect ADDI instruction!
+Instruction value: constant -    0, rs1 -  0, rd -  0
+
+
+cycle    32
+Detect MUL instruction! - 
+
+
+cycle    33
+Detect ADDI instruction!
+Instruction value: constant -    1, rs1 -  5, rd -  5
+
+
+cycle    34
+Detect BEQ instruction! - 
+
+
+cycle    35
+Detect ADDI instruction!
+Instruction value: constant -    0, rs1 -  0, rd -  0
+
+
+cycle    36
+Detect MUL instruction! - 
+
+
+cycle    37
+Detect ADDI instruction!
+Instruction value: constant -    1, rs1 -  5, rd -  5
+
+
+cycle    38
+Detect BEQ instruction! - 
+
+
+cycle    39
+Detect ADDI instruction!
+Instruction value: constant -    0, rs1 -  0, rd -  0
+
+
+cycle    40
+Detect MUL instruction! - 
+
+
+cycle    41
+Detect ADDI instruction!
+Instruction value: constant -    1, rs1 -  5, rd -  5
+
+
+cycle    42
+Detect BEQ instruction! - 
+
+
+cycle    43
+Detect ADDI instruction!
+Instruction value: constant -    0, rs1 -  0, rd -  0
+
+
+cycle    44
+Detect MUL instruction! - 
+
+
+cycle    45
+Detect ADDI instruction!
+Instruction value: constant -    1, rs1 -  5, rd -  5
+
+
+cycle    46
+Detect BEQ instruction! - 
+
+
+cycle    47
+Detect ADDI instruction!
+Instruction value: constant -    0, rs1 -  0, rd -  0
+
+
+cycle    48
+Detect MUL instruction! - 
+
+
+cycle    49
+Detect ADDI instruction!
+Instruction value: constant -    1, rs1 -  5, rd -  5
+
+
+cycle    50
+Detect BEQ instruction! - 
+
+
+cycle    51
+Detect ADDI instruction!
+Instruction value: constant -    0, rs1 -  0, rd -  0
+
+
+cycle    52
+Detect MUL instruction! - 
+
+
+cycle    53
+Detect ADDI instruction!
+Instruction value: constant -    1, rs1 -  5, rd -  5
+
+
+../../Testbenches/tb_lfm.sv PASS
+../../Testbenches/tb_lfm.sv:78: $finish called at 535 (1s)

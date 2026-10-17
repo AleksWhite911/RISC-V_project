@@ -6,18 +6,11 @@ rm -rf log.txt
 
 assembly ()
 {
+    BASE_DIR="$(cd "$(dirname "$0")" && pwd)"
+    HEX_OUTPUT="$BASE_DIR/program.hex"
+
     rars_jar=rars1_6.jar
-    program_s=garmonic.s
-    program_hex=program.hex
-
-    #asm programs
-    program_factorial=../asm/factorial/program.s
-    program_lfm=../asm/lfm/program.s
-    program_garmonics=../asm/garmonics/program.s
-
-    #testbench files
-    testbench_b=tb_b_instruction.sv
-    testbench_lfm=tb_lfm.sv
+    testbench_lfm=../../Testbenches/tb_lfm.sv
 
     #  nc                              - Copyright notice will not be displayed
     #  a                               - assembly only, do not simulate
@@ -44,10 +37,10 @@ assembly ()
             exit 1
         fi
 
-        rars_cmd="java -jar ../rars_directory/$rars_jar"
+        rars_cmd="java -jar ../../rars_directory/$rars_jar"
     fi
 
-    if ! $rars_cmd $rars_args program.s >> log.txt 2>&1
+    if ! $rars_cmd $rars_args "program.s" >> "log.txt" 2>&1
     then
         echo "ERROR: assembly failed. See log.txt." 2>&1
         grep Error log.txt
@@ -77,7 +70,7 @@ simulate_rtl ()
     rm -rf dump.vcd
 
 
-    iverilog -g2005-sv -I../ -o a.out ../*.sv $testbench_lfm >> log.txt 2>&1 \
+    iverilog -g2005-sv -I../../ -o a.out ../../*.sv $testbench_lfm >> log.txt 2>&1 \
     && vvp a.out               >> log.txt 2>&1
 
     if [ -f dump.vcd ] ; then

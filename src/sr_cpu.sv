@@ -8,27 +8,29 @@ module sr_cpu
     output  [31:0]  imAddr,   // instruction memory address
     input   [31:0]  imData,   // instruction memory data
 
-    input   [ 4:0] regAddr,  // debug access reg address
+    input   [4:0] regAddr,  // debug access reg address
     output  [31:0] regData,   // debug access reg data
     output [15:0] i_component, q_component, i_component_2, q_component_2,
     output [31:0] gpio_port_a, gpio_port_b,
     
     output stall,
 
-    //DEBUG PORTS CONTROL
-    output logic ADD_INSTR,
-    output logic OR_INSTR,
-    output logic SRL_INSTR,
-    output logic SLTU_INSTR,
-    output logic SUB_INSTR,
-    output logic MUL_INSTR,
-    output logic LW_INSTR,
-    output logic SW_INSTR,
-    output logic ADDI_INSTR,
-    output logic LUI_INSTR,
-    output logic BEQ_INSTR,
-    output logic BNE_INSTR,
-    output logic JAL_INSTR    
+    `ifdef DEBUG
+      //Debug ports register file
+      output [31:0] rd_0_debug,
+      output [31:0] rd_1_debug,
+      output [31:0] wd_debug,
+
+
+      //Signals for execute instruction
+      output regWrite_debug,
+      output [2:0] aluControl_debug,
+
+    `endif
+
+        //DEBUG PORTS CONTROL
+    output [13:0] decode_instr
+
 );
     // control wires
 
@@ -255,22 +257,20 @@ module sr_cpu
         .MemWrite   ( MemWrite        ),
         .ResultSrc  ( ResultSrc       ),
         .immSrc     ( immSrc          ),
-        .ADD_INSTR  ( ADD_INSTR       ),
-        .OR_INSTR   ( OR_INSTR        ),
-        .SRL_INSTR  ( SRL_INSTR       ),
-        .SLTU_INSTR ( SLTU_INSTR      ),
-        .SUB_INSTR  ( SUB_INSTR       ),
-        .MUL_INSTR  ( MUL_INSTR       ),
-        .LW_INSTR   ( LW_INSTR        ),
-        .SW_INSTR   ( SW_INSTR        ),
-        .ADDI_INSTR ( ADDI_INSTR      ),
-        .LUI_INSTR  ( LUI_INSTR       ),
-        .BEQ_INSTR  ( BEQ_INSTR       ),
-        .BNE_INSTR  ( BNE_INSTR       ),
-        .JAL_INSTR  ( JAL_INSTR       )
+        .decode_instr(decode_instr    )
     );
 
     // debug register access
     assign regData = (regAddr != '0) ? rd0 : pcd;
+
+    
+    `ifdef DEBUG
+      assign rd_0_debug = rd1;
+      assign rd_1_debug = rd2;
+      assign wd_debug = wd3;
+      assign aluControl_debug = aluControl;
+      assign regWrite_debug = regWrite;
+    `endif
+
 
 endmodule

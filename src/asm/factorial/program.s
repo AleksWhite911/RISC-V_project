@@ -1,29 +1,18 @@
 # RISC-V processor program
-
+.data
+value:
+	.word 0
+.text
+# Start initialization
 factorial:
-
+	lui	t1, 0x10010
         li      a0, 1
-        li      t0, 2
-        li 	sp, 0
-        #li      t6  512
-        li      t5  512
-        addi	t5, t5, 512
-        addi	t5, t5, 512
-        addi	t5, t5, 512
-        addi	t5, t5, 512
-        addi	t5, t5, 512
-        addi	t5, t5, 512
-        addi	t5, t5, 512
-        sw      t5, 0(sp)
-        sw	t5  4(sp)  
+        li	t0  1
 
-loop:   mul     a0, a0, t0
+
+
+# Program loop for calculate factorial
+loop:   
+	mul     a0, a0, t0
         addi    t0, t0, 1
-        lw	t5, 0(sp)
-        addi 	t5, t5, 64
-        sw	t5, 0(sp)
-        li      t6  511
-        sw	t6, 8(sp)
-        li 	t6  0
-        sw	t6, 8(sp)
         beqz    zero, loop

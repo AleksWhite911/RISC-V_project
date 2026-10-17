@@ -1,0 +1,646 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Thu Oct  8 00:23:32 2026
+# Process ID: 11208
+# Current directory: C:/VivPrj/risc_v/risc_v.runs/synth_1
+# Command line: vivado.exe -log risc_v_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source risc_v_top.tcl
+# Log file: C:/VivPrj/risc_v/risc_v.runs/synth_1/risc_v_top.vds
+# Journal file: C:/VivPrj/risc_v/risc_v.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source risc_v_top.tcl -notrace
+Command: synth_design -top risc_v_top -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 8804 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 838.984 ; gain = 170.652
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'risc_v_top' [C:/VivPrj/risc_v/src/risc_v_top.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'instruction_rom' [C:/VivPrj/risc_v/src/instruction_rom.sv:2]
+	Parameter SIZE bound to: 1024 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "block" *) [C:/VivPrj/risc_v/src/instruction_rom.sv:14]
+INFO: [Synth 8-3876] $readmem data file 'Testbenches/program.hex' is read successfully [C:/VivPrj/risc_v/src/instruction_rom.sv:26]
+INFO: [Synth 8-6155] done synthesizing module 'instruction_rom' (1#1) [C:/VivPrj/risc_v/src/instruction_rom.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'sr_cpu' [C:/VivPrj/risc_v/src/sr_cpu.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'register_with_rst' [C:/VivPrj/risc_v/src/register_with_rst.sv:13]
+INFO: [Synth 8-6155] done synthesizing module 'register_with_rst' (2#1) [C:/VivPrj/risc_v/src/register_with_rst.sv:13]
+INFO: [Synth 8-6157] synthesizing module 'sr_decode' [C:/VivPrj/risc_v/src/sr_decode.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'sr_decode' (3#1) [C:/VivPrj/risc_v/src/sr_decode.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'sr_register_file' [C:/VivPrj/risc_v/src/sr_register_file.sv:2]
+	Parameter REGISTER_FILE_LENGTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sr_register_file' (4#1) [C:/VivPrj/risc_v/src/sr_register_file.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'sr_alu' [C:/VivPrj/risc_v/src/sr_alu.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'sr_alu' (5#1) [C:/VivPrj/risc_v/src/sr_alu.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'data_memory' [C:/VivPrj/risc_v/src/data_memory.sv:1]
+	Parameter SIZE bound to: 64 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'data_memory' (6#1) [C:/VivPrj/risc_v/src/data_memory.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'angle_to_amp' [C:/VivPrj/risc_v/src/angle_to_amp.sv:1]
+	Parameter INIT_STATE_SIN bound to: 4'b0000 
+	Parameter START_FORM_SIN bound to: 4'b0001 
+	Parameter PLUS_SINE_FORM bound to: 4'b0010 
+	Parameter MINUS_SINE_FORM bound to: 4'b0011 
+	Parameter INIT_STATE_COS bound to: 4'b0000 
+	Parameter START_FORM_COS bound to: 4'b0001 
+	Parameter PLUS_COS_FORM bound to: 4'b0010 
+	Parameter MINUS_COS_FORM bound to: 4'b0011 
+	Parameter cos_start bound to: 16'b0100000000000000 
+	Parameter sin_start bound to: 16'b0000000000000000 
+INFO: [Synth 8-6157] synthesizing module 'lut' [C:/VivPrj/risc_v/src/lut.sv:10]
+INFO: [Synth 8-3876] $readmem data file 'Testbenches/lut.txt' is read successfully [C:/VivPrj/risc_v/src/lut.sv:22]
+INFO: [Synth 8-6155] done synthesizing module 'lut' (7#1) [C:/VivPrj/risc_v/src/lut.sv:10]
+WARNING: [Synth 8-689] width (16) of port connection 'q_a' does not match port width (15) of module 'lut' [C:/VivPrj/risc_v/src/angle_to_amp.sv:49]
+WARNING: [Synth 8-689] width (16) of port connection 'q_b' does not match port width (15) of module 'lut' [C:/VivPrj/risc_v/src/angle_to_amp.sv:50]
+INFO: [Synth 8-6155] done synthesizing module 'angle_to_amp' (8#1) [C:/VivPrj/risc_v/src/angle_to_amp.sv:1]
+WARNING: [Synth 8-689] width (32) of port connection 'freq_control' does not match port width (16) of module 'angle_to_amp' [C:/VivPrj/risc_v/src/sr_cpu.sv:223]
+WARNING: [Synth 8-7023] instance 'dds' of module 'angle_to_amp' has 8 connections declared, but only 7 given [C:/VivPrj/risc_v/src/sr_cpu.sv:222]
+WARNING: [Synth 8-689] width (32) of port connection 'freq_control' does not match port width (16) of module 'angle_to_amp' [C:/VivPrj/risc_v/src/sr_cpu.sv:233]
+WARNING: [Synth 8-7023] instance 'dds_2' of module 'angle_to_amp' has 8 connections declared, but only 7 given [C:/VivPrj/risc_v/src/sr_cpu.sv:232]
+INFO: [Synth 8-6157] synthesizing module 'sr_control' [C:/VivPrj/risc_v/src/sr_control.sv:3]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/VivPrj/risc_v/src/sr_control.sv:69]
+INFO: [Synth 8-6155] done synthesizing module 'sr_control' (9#1) [C:/VivPrj/risc_v/src/sr_control.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'sr_cpu' (10#1) [C:/VivPrj/risc_v/src/sr_cpu.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'risc_v_top' (11#1) [C:/VivPrj/risc_v/src/risc_v_top.sv:2]
+WARNING: [Synth 8-3331] design lut has unconnected port clk
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port lfm_coef[31]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port lfm_coef[30]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port lfm_coef[29]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port lfm_coef[28]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port lfm_coef[27]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port lfm_coef[26]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port lfm_coef[25]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port lfm_coef[24]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port lfm_coef[23]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port lfm_coef[22]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port lfm_coef[21]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port lfm_coef[20]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port lfm_coef[19]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port lfm_coef[18]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port lfm_coef[17]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port lfm_coef[16]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port time_limit_lfm[31]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port time_limit_lfm[30]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port time_limit_lfm[29]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port time_limit_lfm[28]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port time_limit_lfm[27]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port time_limit_lfm[26]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port time_limit_lfm[25]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port time_limit_lfm[24]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port time_limit_lfm[23]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port time_limit_lfm[22]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port time_limit_lfm[21]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port time_limit_lfm[20]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port time_limit_lfm[19]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port time_limit_lfm[18]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port time_limit_lfm[17]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port time_limit_lfm[16]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port time_limit_lfm[15]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port time_limit_lfm[14]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port time_limit_lfm[13]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port time_limit_lfm[12]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port time_limit_lfm[11]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port time_limit_lfm[10]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port time_limit_lfm[9]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port time_limit_lfm[8]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port time_limit_lfm[7]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port time_limit_lfm[6]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port time_limit_lfm[5]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port time_limit_lfm[4]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port time_limit_lfm[3]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port time_limit_lfm[2]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port time_limit_lfm[1]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port time_limit_lfm[0]
+WARNING: [Synth 8-3331] design angle_to_amp has unconnected port enable
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[31]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[30]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[29]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[28]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[27]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[26]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[25]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[24]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[23]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[22]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[21]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[20]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[19]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[18]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[17]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[16]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[15]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[14]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[13]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[12]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[11]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[10]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[9]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[8]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[7]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[6]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[1]
+WARNING: [Synth 8-3331] design data_memory has unconnected port a[0]
+WARNING: [Synth 8-3331] design sr_alu has unconnected port clk
+WARNING: [Synth 8-3331] design sr_alu has unconnected port rst
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 939.395 ; gain = 271.062
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 939.395 ; gain = 271.062
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 939.395 ; gain = 271.062
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/VivPrj/risc_v/risc_v.srcs/constrs_1/new/timings.xdc]
+Finished Parsing XDC File [C:/VivPrj/risc_v/risc_v.srcs/constrs_1/new/timings.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1070.043 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.042 . Memory (MB): peak = 1070.043 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1070.043 ; gain = 401.711
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1070.043 ; gain = 401.711
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1070.043 ; gain = 401.711
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7031] Trying to map ROM "rom" into Block RAM due to explicit "ram_style" or "rom_style" specification
+INFO: [Synth 8-4471] merging register 'ram_reg[17][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[18][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[19][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[20][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[21][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[22][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[23][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[24][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[25][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[26][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[27][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[28][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[29][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[30][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[31][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[32][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[33][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[34][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[35][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[36][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[37][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[38][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[39][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[40][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[41][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[42][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[43][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[44][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[45][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[46][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[47][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[48][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[49][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[50][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[51][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[52][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[53][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[54][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[55][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[56][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[57][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[58][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[59][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[60][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[61][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[62][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-4471] merging register 'ram_reg[63][31:0]' into 'ram_reg[16][31:0]' [C:/VivPrj/risc_v/src/data_memory.sv:21]
+INFO: [Synth 8-802] inferred FSM for state register 'State_sin_reg' in module 'angle_to_amp'
+INFO: [Synth 8-802] inferred FSM for state register 'State_cos_reg' in module 'angle_to_amp'
+INFO: [Synth 8-5544] ROM "State_sin" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "State_cos" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/VivPrj/risc_v/src/sr_cpu.sv:47]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+          INIT_STATE_SIN |                               00 |                             0000
+          START_FORM_SIN |                               01 |                             0001
+          PLUS_SINE_FORM |                               10 |                             0010
+         MINUS_SINE_FORM |                               11 |                             0011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'State_sin_reg' using encoding 'sequential' in module 'angle_to_amp'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+          INIT_STATE_COS |                               00 |                             0000
+          START_FORM_COS |                               01 |                             0001
+           PLUS_COS_FORM |                               10 |                             0010
+          MINUS_COS_FORM |                               11 |                             0011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'State_cos_reg' using encoding 'sequential' in module 'angle_to_amp'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1070.043 ; gain = 401.711
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+--------------+------------+----------+
+|      |RTL Partition |Replication |Instances |
++------+--------------+------------+----------+
+|1     |angle_to_amp  |           2|     33241|
+|2     |sr_cpu__GC0   |           1|      7761|
++------+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 4     
+	   3 Input     32 Bit       Adders := 1     
+	   2 Input     16 Bit       Adders := 10    
++---Registers : 
+	               32 Bit    Registers := 53    
+	               16 Bit    Registers := 4     
+	                1 Bit    Registers := 4     
++---Multipliers : 
+	                32x32  Multipliers := 1     
++---ROMs : 
+	                              ROMs := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 6     
+	   3 Input     32 Bit        Muxes := 2     
+	   4 Input     32 Bit        Muxes := 1     
+	   4 Input     16 Bit        Muxes := 4     
+	   2 Input     16 Bit        Muxes := 4     
+	  15 Input      3 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 4     
+	  15 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 56    
+	   4 Input      1 Bit        Muxes := 16    
+	  15 Input      1 Bit        Muxes := 16    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module instruction_rom 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
++---ROMs : 
+	                              ROMs := 1     
+Module angle_to_amp 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 5     
++---Registers : 
+	               16 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   4 Input     16 Bit        Muxes := 2     
+	   2 Input     16 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 4     
+	   4 Input      1 Bit        Muxes := 8     
+Module register_with_rst 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+Module sr_register_file 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 32    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 32    
+Module sr_alu 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   3 Input     32 Bit       Adders := 1     
++---Multipliers : 
+	                32x32  Multipliers := 1     
+Module data_memory 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 17    
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 16    
+Module sr_control 
+Detailed RTL Component Info : 
++---Muxes : 
+	  15 Input      3 Bit        Muxes := 2     
+	  15 Input      2 Bit        Muxes := 1     
+	  15 Input      1 Bit        Muxes := 16    
+Module sr_cpu 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 3     
++---Registers : 
+	               32 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+	   3 Input     32 Bit        Muxes := 2     
+	   4 Input     32 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/VivPrj/risc_v/src/sr_alu.sv:20]
+DSP Report: Generating DSP result0, operation Mode is: A*B.
+DSP Report: operator result0 is absorbed into DSP result0.
+DSP Report: operator result0 is absorbed into DSP result0.
+DSP Report: Generating DSP result0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator result0 is absorbed into DSP result0.
+DSP Report: operator result0 is absorbed into DSP result0.
+DSP Report: Generating DSP result0, operation Mode is: A*B.
+DSP Report: operator result0 is absorbed into DSP result0.
+DSP Report: operator result0 is absorbed into DSP result0.
+DSP Report: Generating DSP result0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator result0 is absorbed into DSP result0.
+DSP Report: operator result0 is absorbed into DSP result0.
+WARNING: [Synth 8-3917] design risc_v_top has port imAddr_debug[31] driven by constant 0
+WARNING: [Synth 8-3917] design risc_v_top has port imAddr_debug[30] driven by constant 0
+INFO: [Synth 8-3886] merging instance 'risc_v_cpui_1/data_memory/ram_reg[16][26]' (FDE) to 'risc_v_cpui_1/data_memory/ram_reg[16][0]'
+INFO: [Synth 8-3886] merging instance 'risc_v_cpui_1/data_memory/ram_reg[16][18]' (FDE) to 'risc_v_cpui_1/data_memory/ram_reg[16][0]'
+INFO: [Synth 8-3886] merging instance 'risc_v_cpui_1/data_memory/ram_reg[16][22]' (FDE) to 'risc_v_cpui_1/data_memory/ram_reg[16][0]'
+INFO: [Synth 8-3886] merging instance 'risc_v_cpui_1/data_memory/ram_reg[16][30]' (FDE) to 'risc_v_cpui_1/data_memory/ram_reg[16][0]'
+INFO: [Synth 8-3886] merging instance 'risc_v_cpui_1/data_memory/ram_reg[16][14]' (FDE) to 'risc_v_cpui_1/data_memory/ram_reg[16][0]'
+INFO: [Synth 8-3886] merging instance 'risc_v_cpui_1/data_memory/ram_reg[16][24]' (FDE) to 'risc_v_cpui_1/data_memory/ram_reg[16][0]'
+INFO: [Synth 8-3886] merging instance 'risc_v_cpui_1/data_memory/ram_reg[16][16]' (FDE) to 'risc_v_cpui_1/data_memory/ram_reg[16][0]'
+INFO: [Synth 8-3886] merging instance 'risc_v_cpui_1/data_memory/ram_reg[16][20]' (FDE) to 'risc_v_cpui_1/data_memory/ram_reg[16][0]'
+INFO: [Synth 8-3886] merging instance 'risc_v_cpui_1/data_memory/ram_reg[16][28]' (FDE) to 'risc_v_cpui_1/data_memory/ram_reg[16][0]'
+INFO: [Synth 8-3886] merging instance 'risc_v_cpui_1/data_memory/ram_reg[16][12]' (FDE) to 'risc_v_cpui_1/data_memory/ram_reg[16][0]'
+INFO: [Synth 8-3886] merging instance 'risc_v_cpui_1/data_memory/ram_reg[16][25]' (FDE) to 'risc_v_cpui_1/data_memory/ram_reg[16][0]'
+INFO: [Synth 8-3886] merging instance 'risc_v_cpui_1/data_memory/ram_reg[16][17]' (FDE) to 'risc_v_cpui_1/data_memory/ram_reg[16][0]'
+INFO: [Synth 8-3886] merging instance 'risc_v_cpui_1/data_memory/ram_reg[16][21]' (FDE) to 'risc_v_cpui_1/data_memory/ram_reg[16][0]'
+INFO: [Synth 8-3886] merging instance 'risc_v_cpui_1/data_memory/ram_reg[16][29]' (FDE) to 'risc_v_cpui_1/data_memory/ram_reg[16][0]'
+INFO: [Synth 8-3886] merging instance 'risc_v_cpui_1/data_memory/ram_reg[16][13]' (FDE) to 'risc_v_cpui_1/data_memory/ram_reg[16][0]'
+INFO: [Synth 8-3886] merging instance 'risc_v_cpui_1/data_memory/ram_reg[16][23]' (FDE) to 'risc_v_cpui_1/data_memory/ram_reg[16][0]'
+INFO: [Synth 8-3886] merging instance 'risc_v_cpui_1/data_memory/ram_reg[16][31]' (FDE) to 'risc_v_cpui_1/data_memory/ram_reg[16][0]'
+INFO: [Synth 8-3886] merging instance 'risc_v_cpui_1/data_memory/ram_reg[16][15]' (FDE) to 'risc_v_cpui_1/data_memory/ram_reg[16][0]'
+INFO: [Synth 8-3886] merging instance 'risc_v_cpui_1/data_memory/ram_reg[16][19]' (FDE) to 'risc_v_cpui_1/data_memory/ram_reg[16][0]'
+INFO: [Synth 8-3886] merging instance 'risc_v_cpui_1/data_memory/ram_reg[16][27]' (FDE) to 'risc_v_cpui_1/data_memory/ram_reg[16][0]'
+INFO: [Synth 8-3886] merging instance 'risc_v_cpui_1/pcPlus4D_reg[0]' (FDC) to 'risc_v_cpui_1/pcd_reg[0]'
+INFO: [Synth 8-3886] merging instance 'risc_v_cpui_1/data_memory/ram_reg[16][0]' (FDE) to 'risc_v_cpui_1/data_memory/ram_reg[16][1]'
+INFO: [Synth 8-3886] merging instance 'risc_v_cpui_1/data_memory/ram_reg[16][1]' (FDE) to 'risc_v_cpui_1/data_memory/ram_reg[16][2]'
+INFO: [Synth 8-3886] merging instance 'risc_v_cpui_1/data_memory/ram_reg[16][2]' (FDE) to 'risc_v_cpui_1/data_memory/ram_reg[16][3]'
+INFO: [Synth 8-3886] merging instance 'risc_v_cpui_1/data_memory/ram_reg[16][3]' (FDE) to 'risc_v_cpui_1/data_memory/ram_reg[16][4]'
+INFO: [Synth 8-3886] merging instance 'risc_v_cpui_1/data_memory/ram_reg[16][4]' (FDE) to 'risc_v_cpui_1/data_memory/ram_reg[16][5]'
+INFO: [Synth 8-3886] merging instance 'risc_v_cpui_1/data_memory/ram_reg[16][5]' (FDE) to 'risc_v_cpui_1/data_memory/ram_reg[16][6]'
+INFO: [Synth 8-3886] merging instance 'risc_v_cpui_1/data_memory/ram_reg[16][6]' (FDE) to 'risc_v_cpui_1/data_memory/ram_reg[16][7]'
+INFO: [Synth 8-3886] merging instance 'risc_v_cpui_1/data_memory/ram_reg[16][7]' (FDE) to 'risc_v_cpui_1/data_memory/ram_reg[16][8]'
+INFO: [Synth 8-3886] merging instance 'risc_v_cpui_1/data_memory/ram_reg[16][8]' (FDE) to 'risc_v_cpui_1/data_memory/ram_reg[16][9]'
+INFO: [Synth 8-3886] merging instance 'risc_v_cpui_1/data_memory/ram_reg[16][9]' (FDE) to 'risc_v_cpui_1/data_memory/ram_reg[16][10]'
+INFO: [Synth 8-3886] merging instance 'risc_v_cpui_1/data_memory/ram_reg[16][10]' (FDE) to 'risc_v_cpui_1/data_memory/ram_reg[16][11]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (risc_v_cpui_1/data_memory/\ram_reg[16][11] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:06:42 ; elapsed = 00:06:42 . Memory (MB): peak = 2027.602 ; gain = 1359.270
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++------------+------------+---------------+----------------+
+|Module Name | RTL Object | Depth x Width | Implemented As | 
++------------+------------+---------------+----------------+
+|lut         | p_0_out    | 32768x16      | LUT            | 
+|lut         | p_0_out    | 32768x16      | LUT            | 
+|lut         | p_0_out    | 32768x16      | LUT            | 
+|lut         | p_0_out    | 32768x16      | LUT            | 
++------------+------------+---------------+----------------+
+
+
+DSP: Preliminary Mapping  Report (see note below)
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|sr_alu      | A*B            | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|sr_alu      | (PCIN>>17)+A*B | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|sr_alu      | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|sr_alu      | (PCIN>>17)+A*B | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6837] The timing for the instance i_0/rom/rd_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_0/rom/rd_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+
+Report RTL Partitions: 
++------+--------------+------------+----------+
+|      |RTL Partition |Replication |Instances |
++------+--------------+------------+----------+
+|1     |angle_to_amp  |           2|     21709|
+|2     |sr_cpu__GC0   |           1|      7379|
++------+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:06:48 ; elapsed = 00:06:48 . Memory (MB): peak = 2027.602 ; gain = 1359.270
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:06:51 ; elapsed = 00:06:51 . Memory (MB): peak = 2027.602 ; gain = 1359.270
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+--------------+------------+----------+
+|      |RTL Partition |Replication |Instances |
++------+--------------+------------+----------+
+|1     |angle_to_amp  |           2|     21709|
+|2     |sr_cpu__GC0   |           1|      7337|
++------+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6837] The timing for the instance rom/rd_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance rom/rd_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:06:54 ; elapsed = 00:06:55 . Memory (MB): peak = 2027.602 ; gain = 1359.270
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:06:56 ; elapsed = 00:06:57 . Memory (MB): peak = 2027.602 ; gain = 1359.270
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:06:57 ; elapsed = 00:06:57 . Memory (MB): peak = 2027.602 ; gain = 1359.270
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:06:58 ; elapsed = 00:06:59 . Memory (MB): peak = 2027.602 ; gain = 1359.270
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:06:58 ; elapsed = 00:06:59 . Memory (MB): peak = 2027.602 ; gain = 1359.270
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:06:59 ; elapsed = 00:07:00 . Memory (MB): peak = 2027.602 ; gain = 1359.270
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:06:59 ; elapsed = 00:07:00 . Memory (MB): peak = 2027.602 ; gain = 1359.270
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     1|
+|2     |CARRY4   |    86|
+|3     |DSP48E1  |     3|
+|4     |LUT1     |    27|
+|5     |LUT2     |   543|
+|6     |LUT3     |   278|
+|7     |LUT4     |   712|
+|8     |LUT5     |  1994|
+|9     |LUT6     | 17619|
+|10    |MUXF7    |  6661|
+|11    |MUXF8    |  2814|
+|12    |RAMB18E1 |     1|
+|13    |FDCE     |  1087|
+|14    |FDRE     |   778|
+|15    |FDSE     |     2|
+|16    |IBUF     |     7|
+|17    |OBUF     |   237|
++------+---------+------+
+
+Report Instance Areas: 
++------+----------------+------------------+------+
+|      |Instance        |Module            |Cells |
++------+----------------+------------------+------+
+|1     |top             |                  | 32850|
+|2     |  risc_v_cpu    |sr_cpu            | 31902|
+|3     |    alu         |sr_alu            |    27|
+|4     |    data_memory |data_memory       |   744|
+|5     |    dds         |angle_to_amp      | 14315|
+|6     |      lut       |lut_1             |  6060|
+|7     |    dds_2       |angle_to_amp_0    | 14315|
+|8     |      lut       |lut               |  6060|
+|9     |    r_pc        |register_with_rst |    42|
+|10    |    rf          |sr_register_file  |  2358|
+|11    |  rom           |instruction_rom   |   702|
++------+----------------+------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:06:59 ; elapsed = 00:07:00 . Memory (MB): peak = 2027.602 ; gain = 1359.270
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:06:55 ; elapsed = 00:06:58 . Memory (MB): peak = 2027.602 ; gain = 1228.621
+Synthesis Optimization Complete : Time (s): cpu = 00:06:59 ; elapsed = 00:07:00 . Memory (MB): peak = 2027.602 ; gain = 1359.270
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 9565 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 2027.602 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+130 Infos, 88 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:07:17 ; elapsed = 00:07:19 . Memory (MB): peak = 2027.602 ; gain = 1673.945
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 2027.602 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/VivPrj/risc_v/risc_v.runs/synth_1/risc_v_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file risc_v_top_utilization_synth.rpt -pb risc_v_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Oct  8 00:30:57 2026...

@@ -22,19 +22,20 @@ module risc_v_top (
   output [31:0] imAddr_debug,
   output [31:0] ImData_debug,
 
-  output logic ADD_INSTR,
-  output logic OR_INSTR,
-  output logic SRL_INSTR,
-  output logic SLTU_INSTR,
-  output logic SUB_INSTR,
-  output logic MUL_INSTR,
-  output logic LW_INSTR,
-  output logic SW_INSTR,
-  output logic ADDI_INSTR,
-  output logic LUI_INSTR,
-  output logic BEQ_INSTR,
-  output logic BNE_INSTR,
-  output logic JAL_INSTR    
+  `ifdef DEBUG
+      //Debug ports register file
+      output [31:0] rd_0_debug,
+      output [31:0] rd_1_debug,
+      output [31:0] wd_debug,
+
+
+      //Signals for execute instruction
+      output regWrite_debug,
+      output [2:0] aluControl_debug,
+  `endif
+
+
+  output [13:0] decode_instr 
 );
 
   logic [31:0] imAddr, imData;
@@ -47,6 +48,7 @@ module risc_v_top (
     instruction_rom # (.SIZE (1024)) rom
     (
       .clk(clk),
+      .rst(rst),
       .stall(stall),
       .a(imAddr),
       .rd(imData)
@@ -73,20 +75,15 @@ module risc_v_top (
     .i_component_2(i_component_2),
     .q_component_2(q_component_2),
 
+    `ifdef DEBUG
+      .rd_0_debug(rd_0_debug),
+      .rd_1_debug(rd_1_debug),
+      .wd_debug(wd_debug),
+      .regWrite_debug(regWrite_debug),
+      .aluControl_debug(aluControl_debug),
+    `endif
 
-    .ADD_INSTR  ( ADD_INSTR   ),
-    .OR_INSTR   ( OR_INSTR    ),
-    .SRL_INSTR  ( SRL_INSTR   ),
-    .SLTU_INSTR ( SLTU_INSTR  ),
-    .SUB_INSTR  ( SUB_INSTR   ),
-    .MUL_INSTR  ( MUL_INSTR   ),
-    .LW_INSTR   ( LW_INSTR    ),
-    .SW_INSTR   ( SW_INSTR    ),
-    .ADDI_INSTR ( ADDI_INSTR  ),
-    .LUI_INSTR  ( LUI_INSTR   ),
-    .BEQ_INSTR  ( BEQ_INSTR   ),
-    .BNE_INSTR  ( BNE_INSTR   ),
-    .JAL_INSTR  ( JAL_INSTR   )
+    .decode_instr(decode_instr)
 
 
   );
